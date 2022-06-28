@@ -1,3 +1,6 @@
+import * as THREE from 'three'
+import React from 'react';
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
@@ -20,4 +23,11 @@ function animate() {
 
 	renderer.render( scene, camera );
 }
-animate();
+
+
+function App(){
+  animate();
+  return <h1>Hello World From React-Rollup</h1>;
+}
+
+export default App;
