@@ -12,13 +12,12 @@ export function renderPlane(scene) {
   texture.repeat.set(repeats, repeats);
 
   const planeGeo = new THREE.PlaneBufferGeometry(planeSize, planeSize);
-  const planeMat = new THREE.MeshStandardMaterial({
+  const planeMat = new THREE.MeshPhongMaterial({
     map: texture,
     side: THREE.DoubleSide,
   });
-  planeMat.color.setRGB(1.5, 1.5, 1.5);
-
   const mesh = new THREE.Mesh(planeGeo, planeMat);
+  mesh.receiveShadow = true;
   mesh.rotation.x = Math.PI * -.5;
   scene.add(mesh);
 }

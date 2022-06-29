@@ -22,16 +22,17 @@ scene.background = new THREE.Color('white');
 
 const renderer = new THREE.WebGLRenderer();
 renderer.physicallyCorrectLights = true;
+renderer.shadowMap.enabled = true;
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 
 // renderLines(scene);
-// renderCube(scene);
+renderCube(scene);
 renderPlane(scene);
 // renderModel(scene);
 // renderTextureCube(scene);
-renderSpheres(scene)
+// renderSpheres(scene)
 
 // renderAmbientLight(scene);
 renderHemisphereLight(scene);
@@ -61,9 +62,9 @@ function animate(time) {
   // console.log(line.geometry.attributes.position.array);
 
   // animateLines();
+  animateCube();
   // animateCube();
-  // animateCube();
-  animateSpheres(time);
+  // animateSpheres(time);
 
   renderer.render(scene, camera);
 }

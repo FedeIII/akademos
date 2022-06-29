@@ -12,7 +12,7 @@ export function renderAmbientLight(scene) {
 export function renderHemisphereLight(scene) {
   const skyColor = 0xB1E1FF;  // light blue
   const groundColor = 0xB97A20;  // brownish orange
-  const intensity = 2;
+  const intensity = 0.6;
   const light = new THREE.HemisphereLight(skyColor, groundColor, intensity);
   scene.add(light);
 }
@@ -21,10 +21,14 @@ export function renderDirectionalLight(scene) {
   const color = 0xFFFFFF;
   const intensity = 1;
   const light = new THREE.DirectionalLight(color, intensity);
+  light.castShadow = true;
   light.position.set(0, 10, 5);
   light.target.position.set(-5, 0, 0);
   scene.add(light);
   scene.add(light.target);
+
+  // const helper = new THREE.CameraHelper(light.shadow.camera);
+  // scene.add(helper);
 }
 
 export function renderPointLight(scene) {
