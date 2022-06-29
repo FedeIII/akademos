@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { FirstPersonControls } from 'three/examples/jsm/controls/FirstPersonControls';
+import { FirstPersonControls } from './FirstPersonControls';
 
 let controls;
 const clock = new THREE.Clock();
