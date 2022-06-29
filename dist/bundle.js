@@ -9685,7 +9685,7 @@
 	Cache.add(url,data);const callbacks=loading[url];delete loading[url];for(let i=0,il=callbacks.length;i<il;i++){const callback=callbacks[i];if(callback.onLoad)callback.onLoad(data);}}).catch(err=>{// Abort errors and other errors are handled the same
 	const callbacks=loading[url];if(callbacks===undefined){// When onLoad was called and url was deleted in `loading`
 	this.manager.itemError(url);throw err;}delete loading[url];for(let i=0,il=callbacks.length;i<il;i++){const callback=callbacks[i];if(callback.onError)callback.onError(err);}this.manager.itemError(url);}).finally(()=>{this.manager.itemEnd(url);});this.manager.itemStart(url);}setResponseType(value){this.responseType=value;return this;}setMimeType(value){this.mimeType=value;return this;}}class ImageLoader extends Loader{constructor(manager){super(manager);}load(url,onLoad,onProgress,onError){if(this.path!==undefined)url=this.path+url;url=this.manager.resolveURL(url);const scope=this;const cached=Cache.get(url);if(cached!==undefined){scope.manager.itemStart(url);setTimeout(function(){if(onLoad)onLoad(cached);scope.manager.itemEnd(url);},0);return cached;}const image=createElementNS('img');function onImageLoad(){removeEventListeners();Cache.add(url,this);if(onLoad)onLoad(this);scope.manager.itemEnd(url);}function onImageError(event){removeEventListeners();if(onError)onError(event);scope.manager.itemError(url);scope.manager.itemEnd(url);}function removeEventListeners(){image.removeEventListener('load',onImageLoad,false);image.removeEventListener('error',onImageError,false);}image.addEventListener('load',onImageLoad,false);image.addEventListener('error',onImageError,false);if(url.slice(0,5)!=='data:'){if(this.crossOrigin!==undefined)image.crossOrigin=this.crossOrigin;}scope.manager.itemStart(url);image.src=url;return image;}}class TextureLoader extends Loader{constructor(manager){super(manager);}load(url,onLoad,onProgress,onError){const texture=new Texture();const loader=new ImageLoader(this.manager);loader.setCrossOrigin(this.crossOrigin);loader.setPath(this.path);loader.load(url,function(image){texture.image=image;texture.needsUpdate=true;if(onLoad!==undefined){onLoad(texture);}},onProgress,onError);return texture;}}class Light extends Object3D{constructor(color,intensity=1){super();this.isLight=true;this.type='Light';this.color=new Color(color);this.intensity=intensity;}dispose(){// Empty here in base class; some subclasses override.
-	}copy(source,recursive){super.copy(source,recursive);this.color.copy(source.color);this.intensity=source.intensity;return this;}toJSON(meta){const data=super.toJSON(meta);data.object.color=this.color.getHex();data.object.intensity=this.intensity;if(this.groundColor!==undefined)data.object.groundColor=this.groundColor.getHex();if(this.distance!==undefined)data.object.distance=this.distance;if(this.angle!==undefined)data.object.angle=this.angle;if(this.decay!==undefined)data.object.decay=this.decay;if(this.penumbra!==undefined)data.object.penumbra=this.penumbra;if(this.shadow!==undefined)data.object.shadow=this.shadow.toJSON();return data;}}const _projScreenMatrix$1=/*@__PURE__*/new Matrix4();const _lightPositionWorld$1=/*@__PURE__*/new Vector3();const _lookTarget$1=/*@__PURE__*/new Vector3();class LightShadow{constructor(camera){this.camera=camera;this.bias=0;this.normalBias=0;this.radius=1;this.blurSamples=8;this.mapSize=new Vector2(512,512);this.map=null;this.mapPass=null;this.matrix=new Matrix4();this.autoUpdate=true;this.needsUpdate=false;this._frustum=new Frustum();this._frameExtents=new Vector2(1,1);this._viewportCount=1;this._viewports=[new Vector4(0,0,1,1)];}getViewportCount(){return this._viewportCount;}getFrustum(){return this._frustum;}updateMatrices(light){const shadowCamera=this.camera;const shadowMatrix=this.matrix;_lightPositionWorld$1.setFromMatrixPosition(light.matrixWorld);shadowCamera.position.copy(_lightPositionWorld$1);_lookTarget$1.setFromMatrixPosition(light.target.matrixWorld);shadowCamera.lookAt(_lookTarget$1);shadowCamera.updateMatrixWorld();_projScreenMatrix$1.multiplyMatrices(shadowCamera.projectionMatrix,shadowCamera.matrixWorldInverse);this._frustum.setFromProjectionMatrix(_projScreenMatrix$1);shadowMatrix.set(0.5,0.0,0.0,0.5,0.0,0.5,0.0,0.5,0.0,0.0,0.5,0.5,0.0,0.0,0.0,1.0);shadowMatrix.multiply(shadowCamera.projectionMatrix);shadowMatrix.multiply(shadowCamera.matrixWorldInverse);}getViewport(viewportIndex){return this._viewports[viewportIndex];}getFrameExtents(){return this._frameExtents;}dispose(){if(this.map){this.map.dispose();}if(this.mapPass){this.mapPass.dispose();}}copy(source){this.camera=source.camera.clone();this.bias=source.bias;this.radius=source.radius;this.mapSize.copy(source.mapSize);return this;}clone(){return new this.constructor().copy(this);}toJSON(){const object={};if(this.bias!==0)object.bias=this.bias;if(this.normalBias!==0)object.normalBias=this.normalBias;if(this.radius!==1)object.radius=this.radius;if(this.mapSize.x!==512||this.mapSize.y!==512)object.mapSize=this.mapSize.toArray();object.camera=this.camera.toJSON(false).object;delete object.camera.matrix;return object;}}class SpotLightShadow extends LightShadow{constructor(){super(new PerspectiveCamera(50,1,0.5,500));this.isSpotLightShadow=true;this.focus=1;}updateMatrices(light){const camera=this.camera;const fov=RAD2DEG*2*light.angle*this.focus;const aspect=this.mapSize.width/this.mapSize.height;const far=light.distance||camera.far;if(fov!==camera.fov||aspect!==camera.aspect||far!==camera.far){camera.fov=fov;camera.aspect=aspect;camera.far=far;camera.updateProjectionMatrix();}super.updateMatrices(light);}copy(source){super.copy(source);this.focus=source.focus;return this;}}class SpotLight extends Light{constructor(color,intensity,distance=0,angle=Math.PI/3,penumbra=0,decay=1){super(color,intensity);this.isSpotLight=true;this.type='SpotLight';this.position.copy(Object3D.DefaultUp);this.updateMatrix();this.target=new Object3D();this.distance=distance;this.angle=angle;this.penumbra=penumbra;this.decay=decay;// for physically correct lights, should be 2.
+	}copy(source,recursive){super.copy(source,recursive);this.color.copy(source.color);this.intensity=source.intensity;return this;}toJSON(meta){const data=super.toJSON(meta);data.object.color=this.color.getHex();data.object.intensity=this.intensity;if(this.groundColor!==undefined)data.object.groundColor=this.groundColor.getHex();if(this.distance!==undefined)data.object.distance=this.distance;if(this.angle!==undefined)data.object.angle=this.angle;if(this.decay!==undefined)data.object.decay=this.decay;if(this.penumbra!==undefined)data.object.penumbra=this.penumbra;if(this.shadow!==undefined)data.object.shadow=this.shadow.toJSON();return data;}}class HemisphereLight extends Light{constructor(skyColor,groundColor,intensity){super(skyColor,intensity);this.isHemisphereLight=true;this.type='HemisphereLight';this.position.copy(Object3D.DefaultUp);this.updateMatrix();this.groundColor=new Color(groundColor);}copy(source,recursive){super.copy(source,recursive);this.groundColor.copy(source.groundColor);return this;}}const _projScreenMatrix$1=/*@__PURE__*/new Matrix4();const _lightPositionWorld$1=/*@__PURE__*/new Vector3();const _lookTarget$1=/*@__PURE__*/new Vector3();class LightShadow{constructor(camera){this.camera=camera;this.bias=0;this.normalBias=0;this.radius=1;this.blurSamples=8;this.mapSize=new Vector2(512,512);this.map=null;this.mapPass=null;this.matrix=new Matrix4();this.autoUpdate=true;this.needsUpdate=false;this._frustum=new Frustum();this._frameExtents=new Vector2(1,1);this._viewportCount=1;this._viewports=[new Vector4(0,0,1,1)];}getViewportCount(){return this._viewportCount;}getFrustum(){return this._frustum;}updateMatrices(light){const shadowCamera=this.camera;const shadowMatrix=this.matrix;_lightPositionWorld$1.setFromMatrixPosition(light.matrixWorld);shadowCamera.position.copy(_lightPositionWorld$1);_lookTarget$1.setFromMatrixPosition(light.target.matrixWorld);shadowCamera.lookAt(_lookTarget$1);shadowCamera.updateMatrixWorld();_projScreenMatrix$1.multiplyMatrices(shadowCamera.projectionMatrix,shadowCamera.matrixWorldInverse);this._frustum.setFromProjectionMatrix(_projScreenMatrix$1);shadowMatrix.set(0.5,0.0,0.0,0.5,0.0,0.5,0.0,0.5,0.0,0.0,0.5,0.5,0.0,0.0,0.0,1.0);shadowMatrix.multiply(shadowCamera.projectionMatrix);shadowMatrix.multiply(shadowCamera.matrixWorldInverse);}getViewport(viewportIndex){return this._viewports[viewportIndex];}getFrameExtents(){return this._frameExtents;}dispose(){if(this.map){this.map.dispose();}if(this.mapPass){this.mapPass.dispose();}}copy(source){this.camera=source.camera.clone();this.bias=source.bias;this.radius=source.radius;this.mapSize.copy(source.mapSize);return this;}clone(){return new this.constructor().copy(this);}toJSON(){const object={};if(this.bias!==0)object.bias=this.bias;if(this.normalBias!==0)object.normalBias=this.normalBias;if(this.radius!==1)object.radius=this.radius;if(this.mapSize.x!==512||this.mapSize.y!==512)object.mapSize=this.mapSize.toArray();object.camera=this.camera.toJSON(false).object;delete object.camera.matrix;return object;}}class SpotLightShadow extends LightShadow{constructor(){super(new PerspectiveCamera(50,1,0.5,500));this.isSpotLightShadow=true;this.focus=1;}updateMatrices(light){const camera=this.camera;const fov=RAD2DEG*2*light.angle*this.focus;const aspect=this.mapSize.width/this.mapSize.height;const far=light.distance||camera.far;if(fov!==camera.fov||aspect!==camera.aspect||far!==camera.far){camera.fov=fov;camera.aspect=aspect;camera.far=far;camera.updateProjectionMatrix();}super.updateMatrices(light);}copy(source){super.copy(source);this.focus=source.focus;return this;}}class SpotLight extends Light{constructor(color,intensity,distance=0,angle=Math.PI/3,penumbra=0,decay=1){super(color,intensity);this.isSpotLight=true;this.type='SpotLight';this.position.copy(Object3D.DefaultUp);this.updateMatrix();this.target=new Object3D();this.distance=distance;this.angle=angle;this.penumbra=penumbra;this.decay=decay;// for physically correct lights, should be 2.
 	this.shadow=new SpotLightShadow();}get power(){// compute the light's luminous power (in lumens) from its intensity (in candela)
 	// by convention for a spotlight, luminous power (lm) = π * luminous intensity (cd)
 	return this.intensity*Math.PI;}set power(power){// set the light's intensity (in candela) from the desired luminous power (in lumens)
@@ -12975,10 +12975,41 @@
 	function renderModel(scene) {
 	  const loader = new GLTFLoader();
 	  loader.load('./models/DamagedHelmet/DamagedHelmet.glft', function (gltf) {
+	    console.log(gltf.scene);
+	    gltf.scene.position.y = 1;
 	    scene.add(gltf.scene);
 	  }, undefined, function (error) {
 	    console.error(error);
 	  });
+	}
+
+	function renderPlane(scene) {
+	  const planeSize = 40;
+	  const loader = new TextureLoader();
+	  const texture = loader.load('images/checker.png');
+	  texture.wrapS = RepeatWrapping;
+	  texture.wrapT = RepeatWrapping;
+	  texture.magFilter = NearestFilter;
+	  const repeats = planeSize / 2;
+	  texture.repeat.set(repeats, repeats);
+	  const planeGeo = new PlaneGeometry(planeSize, planeSize);
+	  const planeMat = new MeshPhongMaterial({
+	    map: texture,
+	    side: DoubleSide
+	  });
+	  const mesh = new Mesh(planeGeo, planeMat);
+	  mesh.rotation.x = Math.PI * -.5;
+	  scene.add(mesh);
+	}
+
+	function renderHemisphereLight(scene) {
+	  const skyColor = 0xB1E1FF; // light blue
+
+	  const groundColor = 0xB97A20; // brownish orange
+
+	  const intensity = 1;
+	  const light = new HemisphereLight(skyColor, groundColor, intensity);
+	  scene.add(light);
 	}
 
 	// Unlike TrackballControls, it maintains the "up" direction object.up (+Y by default).
@@ -13809,10 +13840,13 @@
 	document.body.appendChild(renderer.domElement); // renderLines(scene);
 	// renderCube(scene);
 
-	renderModel(scene); // CAMERA
+	renderPlane(scene);
+	renderModel(scene); // renderAmbientLight(scene);
 
-	const camera = new PerspectiveCamera(1, window.innerWidth / window.innerHeight, 0.1, 1000);
-	camera.position.set(0, 0, 100);
+	renderHemisphereLight(scene); // CAMERA
+
+	const camera = new PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+	camera.position.set(0, 10, 20);
 	camera.lookAt(0, 0, 0);
 	const controls = new OrbitControls(camera, renderer.domElement);
 	controls.update();

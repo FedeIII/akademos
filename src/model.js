@@ -5,6 +5,8 @@ export function renderModel(scene) {
   loader.load(
     './models/DamagedHelmet/DamagedHelmet.glft',
     function (gltf) {
+      console.log(gltf.scene);
+      gltf.scene.position.y = 1;
       scene.add(gltf.scene);
     },
     undefined,
