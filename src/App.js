@@ -1,6 +1,12 @@
 import * as THREE from 'three'
 import React from 'react';
 
+import {
+  updateControls,
+  useFirstPersonControls,
+  useOrbitControls
+} from './controls';
+
 import { renderCube, renderTextureCube, animateCube } from './cube';
 import { renderLines, animateLines } from './lines';
 import { renderModel } from './model';
@@ -14,7 +20,6 @@ import {
   renderRectAreaLight,
 } from './lights';
 
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { animateSpheres, renderSpheres } from './spheres';
 
 const scene = new THREE.Scene();
@@ -51,13 +56,12 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.set(0, 10, 20);
 camera.lookAt(0, 0, 0);
 
-
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.update();
+// useOrbitControls(camera, renderer);
+useFirstPersonControls(camera, renderer);
 
 function animate(time) {
   requestAnimationFrame(animate);
-  controls.update()
+  updateControls();
 
   // console.log(line.geometry.attributes.position.array);
 

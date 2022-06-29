@@ -8275,18 +8275,31 @@
 	 * @license
 	 * Copyright 2010-2022 Three.js Authors
 	 * SPDX-License-Identifier: MIT
-	 */const REVISION='141';const MOUSE={LEFT:0,MIDDLE:1,RIGHT:2,ROTATE:0,DOLLY:1,PAN:2};const TOUCH={ROTATE:0,PAN:1,DOLLY_PAN:2,DOLLY_ROTATE:3};const CullFaceNone=0;const CullFaceBack=1;const CullFaceFront=2;const PCFShadowMap=1;const PCFSoftShadowMap=2;const VSMShadowMap=3;const FrontSide=0;const BackSide=1;const DoubleSide=2;const FlatShading=1;const NoBlending=0;const NormalBlending=1;const AdditiveBlending=2;const SubtractiveBlending=3;const MultiplyBlending=4;const CustomBlending=5;const AddEquation=100;const SubtractEquation=101;const ReverseSubtractEquation=102;const MinEquation=103;const MaxEquation=104;const ZeroFactor=200;const OneFactor=201;const SrcColorFactor=202;const OneMinusSrcColorFactor=203;const SrcAlphaFactor=204;const OneMinusSrcAlphaFactor=205;const DstAlphaFactor=206;const OneMinusDstAlphaFactor=207;const DstColorFactor=208;const OneMinusDstColorFactor=209;const SrcAlphaSaturateFactor=210;const NeverDepth=0;const AlwaysDepth=1;const LessDepth=2;const LessEqualDepth=3;const EqualDepth=4;const GreaterEqualDepth=5;const GreaterDepth=6;const NotEqualDepth=7;const MultiplyOperation=0;const MixOperation=1;const AddOperation=2;const NoToneMapping=0;const LinearToneMapping=1;const ReinhardToneMapping=2;const CineonToneMapping=3;const ACESFilmicToneMapping=4;const CustomToneMapping=5;const UVMapping=300;const CubeReflectionMapping=301;const CubeRefractionMapping=302;const EquirectangularReflectionMapping=303;const EquirectangularRefractionMapping=304;const CubeUVReflectionMapping=306;const RepeatWrapping=1000;const ClampToEdgeWrapping=1001;const MirroredRepeatWrapping=1002;const NearestFilter=1003;const NearestMipmapNearestFilter=1004;const NearestMipmapLinearFilter=1005;const LinearFilter=1006;const LinearMipmapNearestFilter=1007;const LinearMipmapLinearFilter=1008;const UnsignedByteType=1009;const ByteType=1010;const ShortType=1011;const UnsignedShortType=1012;const IntType=1013;const UnsignedIntType=1014;const FloatType=1015;const HalfFloatType=1016;const UnsignedShort4444Type=1017;const UnsignedShort5551Type=1018;const UnsignedInt248Type=1020;const AlphaFormat=1021;const RGBFormat=1022;const RGBAFormat=1023;const LuminanceFormat=1024;const LuminanceAlphaFormat=1025;const DepthFormat=1026;const DepthStencilFormat=1027;const RedFormat=1028;const RedIntegerFormat=1029;const RGFormat=1030;const RGIntegerFormat=1031;const RGBAIntegerFormat=1033;const RGB_S3TC_DXT1_Format=33776;const RGBA_S3TC_DXT1_Format=33777;const RGBA_S3TC_DXT3_Format=33778;const RGBA_S3TC_DXT5_Format=33779;const RGB_PVRTC_4BPPV1_Format=35840;const RGB_PVRTC_2BPPV1_Format=35841;const RGBA_PVRTC_4BPPV1_Format=35842;const RGBA_PVRTC_2BPPV1_Format=35843;const RGB_ETC1_Format=36196;const RGB_ETC2_Format=37492;const RGBA_ETC2_EAC_Format=37496;const RGBA_ASTC_4x4_Format=37808;const RGBA_ASTC_5x4_Format=37809;const RGBA_ASTC_5x5_Format=37810;const RGBA_ASTC_6x5_Format=37811;const RGBA_ASTC_6x6_Format=37812;const RGBA_ASTC_8x5_Format=37813;const RGBA_ASTC_8x6_Format=37814;const RGBA_ASTC_8x8_Format=37815;const RGBA_ASTC_10x5_Format=37816;const RGBA_ASTC_10x6_Format=37817;const RGBA_ASTC_10x8_Format=37818;const RGBA_ASTC_10x10_Format=37819;const RGBA_ASTC_12x10_Format=37820;const RGBA_ASTC_12x12_Format=37821;const RGBA_BPTC_Format=36492;const LinearEncoding=3000;const sRGBEncoding=3001;const BasicDepthPacking=3200;const RGBADepthPacking=3201;const TangentSpaceNormalMap=0;const ObjectSpaceNormalMap=1;// Color space string identifiers, matching CSS Color Module Level 4 and WebGPU names where available.
+	 */const REVISION='141';const CullFaceNone=0;const CullFaceBack=1;const CullFaceFront=2;const PCFShadowMap=1;const PCFSoftShadowMap=2;const VSMShadowMap=3;const FrontSide=0;const BackSide=1;const DoubleSide=2;const FlatShading=1;const NoBlending=0;const NormalBlending=1;const AdditiveBlending=2;const SubtractiveBlending=3;const MultiplyBlending=4;const CustomBlending=5;const AddEquation=100;const SubtractEquation=101;const ReverseSubtractEquation=102;const MinEquation=103;const MaxEquation=104;const ZeroFactor=200;const OneFactor=201;const SrcColorFactor=202;const OneMinusSrcColorFactor=203;const SrcAlphaFactor=204;const OneMinusSrcAlphaFactor=205;const DstAlphaFactor=206;const OneMinusDstAlphaFactor=207;const DstColorFactor=208;const OneMinusDstColorFactor=209;const SrcAlphaSaturateFactor=210;const NeverDepth=0;const AlwaysDepth=1;const LessDepth=2;const LessEqualDepth=3;const EqualDepth=4;const GreaterEqualDepth=5;const GreaterDepth=6;const NotEqualDepth=7;const MultiplyOperation=0;const MixOperation=1;const AddOperation=2;const NoToneMapping=0;const LinearToneMapping=1;const ReinhardToneMapping=2;const CineonToneMapping=3;const ACESFilmicToneMapping=4;const CustomToneMapping=5;const UVMapping=300;const CubeReflectionMapping=301;const CubeRefractionMapping=302;const EquirectangularReflectionMapping=303;const EquirectangularRefractionMapping=304;const CubeUVReflectionMapping=306;const RepeatWrapping=1000;const ClampToEdgeWrapping=1001;const MirroredRepeatWrapping=1002;const NearestFilter=1003;const NearestMipmapNearestFilter=1004;const NearestMipmapLinearFilter=1005;const LinearFilter=1006;const LinearMipmapNearestFilter=1007;const LinearMipmapLinearFilter=1008;const UnsignedByteType=1009;const ByteType=1010;const ShortType=1011;const UnsignedShortType=1012;const IntType=1013;const UnsignedIntType=1014;const FloatType=1015;const HalfFloatType=1016;const UnsignedShort4444Type=1017;const UnsignedShort5551Type=1018;const UnsignedInt248Type=1020;const AlphaFormat=1021;const RGBFormat=1022;const RGBAFormat=1023;const LuminanceFormat=1024;const LuminanceAlphaFormat=1025;const DepthFormat=1026;const DepthStencilFormat=1027;const RedFormat=1028;const RedIntegerFormat=1029;const RGFormat=1030;const RGIntegerFormat=1031;const RGBAIntegerFormat=1033;const RGB_S3TC_DXT1_Format=33776;const RGBA_S3TC_DXT1_Format=33777;const RGBA_S3TC_DXT3_Format=33778;const RGBA_S3TC_DXT5_Format=33779;const RGB_PVRTC_4BPPV1_Format=35840;const RGB_PVRTC_2BPPV1_Format=35841;const RGBA_PVRTC_4BPPV1_Format=35842;const RGBA_PVRTC_2BPPV1_Format=35843;const RGB_ETC1_Format=36196;const RGB_ETC2_Format=37492;const RGBA_ETC2_EAC_Format=37496;const RGBA_ASTC_4x4_Format=37808;const RGBA_ASTC_5x4_Format=37809;const RGBA_ASTC_5x5_Format=37810;const RGBA_ASTC_6x5_Format=37811;const RGBA_ASTC_6x6_Format=37812;const RGBA_ASTC_8x5_Format=37813;const RGBA_ASTC_8x6_Format=37814;const RGBA_ASTC_8x8_Format=37815;const RGBA_ASTC_10x5_Format=37816;const RGBA_ASTC_10x6_Format=37817;const RGBA_ASTC_10x8_Format=37818;const RGBA_ASTC_10x10_Format=37819;const RGBA_ASTC_12x10_Format=37820;const RGBA_ASTC_12x12_Format=37821;const RGBA_BPTC_Format=36492;const LinearEncoding=3000;const sRGBEncoding=3001;const BasicDepthPacking=3200;const RGBADepthPacking=3201;const TangentSpaceNormalMap=0;const ObjectSpaceNormalMap=1;// Color space string identifiers, matching CSS Color Module Level 4 and WebGPU names where available.
 	const SRGBColorSpace='srgb';const LinearSRGBColorSpace='srgb-linear';const KeepStencilOp=7680;const AlwaysStencilFunc=519;const StaticDrawUsage=35044;const GLSL3='300 es';const _SRGBAFormat=1035;// fallback for WebGL 1
 	/**
 	 * https://github.com/mrdoob/eventdispatcher.js/
 	 */class EventDispatcher{addEventListener(type,listener){if(this._listeners===undefined)this._listeners={};const listeners=this._listeners;if(listeners[type]===undefined){listeners[type]=[];}if(listeners[type].indexOf(listener)===-1){listeners[type].push(listener);}}hasEventListener(type,listener){if(this._listeners===undefined)return false;const listeners=this._listeners;return listeners[type]!==undefined&&listeners[type].indexOf(listener)!==-1;}removeEventListener(type,listener){if(this._listeners===undefined)return;const listeners=this._listeners;const listenerArray=listeners[type];if(listenerArray!==undefined){const index=listenerArray.indexOf(listener);if(index!==-1){listenerArray.splice(index,1);}}}dispatchEvent(event){if(this._listeners===undefined)return;const listeners=this._listeners;const listenerArray=listeners[event.type];if(listenerArray!==undefined){event.target=this;// Make a copy, in case listeners are removed while iterating.
-	const array=listenerArray.slice(0);for(let i=0,l=array.length;i<l;i++){array[i].call(this,event);}event.target=null;}}}const _lut=[];for(let i=0;i<256;i++){_lut[i]=(i<16?'0':'')+i.toString(16);}const DEG2RAD=Math.PI/180;const RAD2DEG=180/Math.PI;// http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript/21963136#21963136
+	const array=listenerArray.slice(0);for(let i=0,l=array.length;i<l;i++){array[i].call(this,event);}event.target=null;}}}const _lut=[];for(let i=0;i<256;i++){_lut[i]=(i<16?'0':'')+i.toString(16);}let _seed=1234567;const DEG2RAD=Math.PI/180;const RAD2DEG=180/Math.PI;// http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript/21963136#21963136
 	function generateUUID(){const d0=Math.random()*0xffffffff|0;const d1=Math.random()*0xffffffff|0;const d2=Math.random()*0xffffffff|0;const d3=Math.random()*0xffffffff|0;const uuid=_lut[d0&0xff]+_lut[d0>>8&0xff]+_lut[d0>>16&0xff]+_lut[d0>>24&0xff]+'-'+_lut[d1&0xff]+_lut[d1>>8&0xff]+'-'+_lut[d1>>16&0x0f|0x40]+_lut[d1>>24&0xff]+'-'+_lut[d2&0x3f|0x80]+_lut[d2>>8&0xff]+'-'+_lut[d2>>16&0xff]+_lut[d2>>24&0xff]+_lut[d3&0xff]+_lut[d3>>8&0xff]+_lut[d3>>16&0xff]+_lut[d3>>24&0xff];// .toLowerCase() here flattens concatenated strings to save heap memory space.
 	return uuid.toLowerCase();}function clamp(value,min,max){return Math.max(min,Math.min(max,value));}// compute euclidean modulo of m % n
 	// https://en.wikipedia.org/wiki/Modulo_operation
 	function euclideanModulo(n,m){return (n%m+m)%m;}// Linear mapping from range <a1, a2> to range <b1, b2>
+	function mapLinear(x,a1,a2,b1,b2){return b1+(x-a1)*(b2-b1)/(a2-a1);}// https://www.gamedev.net/tutorials/programming/general-and-gameplay-programming/inverse-lerp-a-super-useful-yet-often-overlooked-function-r5230/
+	function inverseLerp(x,y,value){if(x!==y){return (value-x)/(y-x);}else {return 0;}}// https://en.wikipedia.org/wiki/Linear_interpolation
 	function lerp(x,y,t){return (1-t)*x+t*y;}// http://www.rorydriscoll.com/2016/03/07/frame-rate-independent-damping-using-lerp/
-	function isPowerOfTwo(value){return (value&value-1)===0&&value!==0;}function floorPowerOfTwo(value){return Math.pow(2,Math.floor(Math.log(value)/Math.LN2));}class Vector2{constructor(x=0,y=0){this.isVector2=true;this.x=x;this.y=y;}get width(){return this.x;}set width(value){this.x=value;}get height(){return this.y;}set height(value){this.y=value;}set(x,y){this.x=x;this.y=y;return this;}setScalar(scalar){this.x=scalar;this.y=scalar;return this;}setX(x){this.x=x;return this;}setY(y){this.y=y;return this;}setComponent(index,value){switch(index){case 0:this.x=value;break;case 1:this.y=value;break;default:throw new Error('index is out of range: '+index);}return this;}getComponent(index){switch(index){case 0:return this.x;case 1:return this.y;default:throw new Error('index is out of range: '+index);}}clone(){return new this.constructor(this.x,this.y);}copy(v){this.x=v.x;this.y=v.y;return this;}add(v,w){if(w!==undefined){console.warn('THREE.Vector2: .add() now only accepts one argument. Use .addVectors( a, b ) instead.');return this.addVectors(v,w);}this.x+=v.x;this.y+=v.y;return this;}addScalar(s){this.x+=s;this.y+=s;return this;}addVectors(a,b){this.x=a.x+b.x;this.y=a.y+b.y;return this;}addScaledVector(v,s){this.x+=v.x*s;this.y+=v.y*s;return this;}sub(v,w){if(w!==undefined){console.warn('THREE.Vector2: .sub() now only accepts one argument. Use .subVectors( a, b ) instead.');return this.subVectors(v,w);}this.x-=v.x;this.y-=v.y;return this;}subScalar(s){this.x-=s;this.y-=s;return this;}subVectors(a,b){this.x=a.x-b.x;this.y=a.y-b.y;return this;}multiply(v){this.x*=v.x;this.y*=v.y;return this;}multiplyScalar(scalar){this.x*=scalar;this.y*=scalar;return this;}divide(v){this.x/=v.x;this.y/=v.y;return this;}divideScalar(scalar){return this.multiplyScalar(1/scalar);}applyMatrix3(m){const x=this.x,y=this.y;const e=m.elements;this.x=e[0]*x+e[3]*y+e[6];this.y=e[1]*x+e[4]*y+e[7];return this;}min(v){this.x=Math.min(this.x,v.x);this.y=Math.min(this.y,v.y);return this;}max(v){this.x=Math.max(this.x,v.x);this.y=Math.max(this.y,v.y);return this;}clamp(min,max){// assumes min < max, componentwise
+	function damp(x,y,lambda,dt){return lerp(x,y,1-Math.exp(-lambda*dt));}// https://www.desmos.com/calculator/vcsjnyz7x4
+	function pingpong(x,length=1){return length-Math.abs(euclideanModulo(x,length*2)-length);}// http://en.wikipedia.org/wiki/Smoothstep
+	function smoothstep(x,min,max){if(x<=min)return 0;if(x>=max)return 1;x=(x-min)/(max-min);return x*x*(3-2*x);}function smootherstep(x,min,max){if(x<=min)return 0;if(x>=max)return 1;x=(x-min)/(max-min);return x*x*x*(x*(x*6-15)+10);}// Random integer from <low, high> interval
+	function randInt(low,high){return low+Math.floor(Math.random()*(high-low+1));}// Random float from <low, high> interval
+	function randFloat(low,high){return low+Math.random()*(high-low);}// Random float from <-range/2, range/2> interval
+	function randFloatSpread(range){return range*(0.5-Math.random());}// Deterministic pseudo-random float in the interval [ 0, 1 ]
+	function seededRandom(s){if(s!==undefined)_seed=s;// Mulberry32 generator
+	let t=_seed+=0x6D2B79F5;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return ((t^t>>>14)>>>0)/4294967296;}function degToRad(degrees){return degrees*DEG2RAD;}function radToDeg(radians){return radians*RAD2DEG;}function isPowerOfTwo(value){return (value&value-1)===0&&value!==0;}function ceilPowerOfTwo(value){return Math.pow(2,Math.ceil(Math.log(value)/Math.LN2));}function floorPowerOfTwo(value){return Math.pow(2,Math.floor(Math.log(value)/Math.LN2));}function setQuaternionFromProperEuler(q,a,b,c,order){// Intrinsic Proper Euler Angles - see https://en.wikipedia.org/wiki/Euler_angles
+	// rotations are applied to the axes in the order specified by 'order'
+	// rotation by angle 'a' is applied first, then by angle 'b', then by angle 'c'
+	// angles are in radians
+	const cos=Math.cos;const sin=Math.sin;const c2=cos(b/2);const s2=sin(b/2);const c13=cos((a+c)/2);const s13=sin((a+c)/2);const c1_3=cos((a-c)/2);const s1_3=sin((a-c)/2);const c3_1=cos((c-a)/2);const s3_1=sin((c-a)/2);switch(order){case'XYX':q.set(c2*s13,s2*c1_3,s2*s1_3,c2*c13);break;case'YZY':q.set(s2*s1_3,c2*s13,s2*c1_3,c2*c13);break;case'ZXZ':q.set(s2*c1_3,s2*s1_3,c2*s13,c2*c13);break;case'XZX':q.set(c2*s13,s2*s3_1,s2*c3_1,c2*c13);break;case'YXY':q.set(s2*c3_1,c2*s13,s2*s3_1,c2*c13);break;case'ZYZ':q.set(s2*s3_1,s2*c3_1,c2*s13,c2*c13);break;default:console.warn('THREE.MathUtils: .setQuaternionFromProperEuler() encountered an unknown order: '+order);}}function denormalize$1(value,array){switch(array.constructor){case Float32Array:return value;case Uint16Array:return value/65535.0;case Uint8Array:return value/255.0;case Int16Array:return Math.max(value/32767.0,-1.0);case Int8Array:return Math.max(value/127.0,-1.0);default:throw new Error('Invalid component type.');}}function normalize(value,array){switch(array.constructor){case Float32Array:return value;case Uint16Array:return Math.round(value*65535.0);case Uint8Array:return Math.round(value*255.0);case Int16Array:return Math.round(value*32767.0);case Int8Array:return Math.round(value*127.0);default:throw new Error('Invalid component type.');}}var MathUtils=/*#__PURE__*/Object.freeze({__proto__:null,DEG2RAD:DEG2RAD,RAD2DEG:RAD2DEG,generateUUID:generateUUID,clamp:clamp,euclideanModulo:euclideanModulo,mapLinear:mapLinear,inverseLerp:inverseLerp,lerp:lerp,damp:damp,pingpong:pingpong,smoothstep:smoothstep,smootherstep:smootherstep,randInt:randInt,randFloat:randFloat,randFloatSpread:randFloatSpread,seededRandom:seededRandom,degToRad:degToRad,radToDeg:radToDeg,isPowerOfTwo:isPowerOfTwo,ceilPowerOfTwo:ceilPowerOfTwo,floorPowerOfTwo:floorPowerOfTwo,setQuaternionFromProperEuler:setQuaternionFromProperEuler,normalize:normalize,denormalize:denormalize$1});class Vector2{constructor(x=0,y=0){this.isVector2=true;this.x=x;this.y=y;}get width(){return this.x;}set width(value){this.x=value;}get height(){return this.y;}set height(value){this.y=value;}set(x,y){this.x=x;this.y=y;return this;}setScalar(scalar){this.x=scalar;this.y=scalar;return this;}setX(x){this.x=x;return this;}setY(y){this.y=y;return this;}setComponent(index,value){switch(index){case 0:this.x=value;break;case 1:this.y=value;break;default:throw new Error('index is out of range: '+index);}return this;}getComponent(index){switch(index){case 0:return this.x;case 1:return this.y;default:throw new Error('index is out of range: '+index);}}clone(){return new this.constructor(this.x,this.y);}copy(v){this.x=v.x;this.y=v.y;return this;}add(v,w){if(w!==undefined){console.warn('THREE.Vector2: .add() now only accepts one argument. Use .addVectors( a, b ) instead.');return this.addVectors(v,w);}this.x+=v.x;this.y+=v.y;return this;}addScalar(s){this.x+=s;this.y+=s;return this;}addVectors(a,b){this.x=a.x+b.x;this.y=a.y+b.y;return this;}addScaledVector(v,s){this.x+=v.x*s;this.y+=v.y*s;return this;}sub(v,w){if(w!==undefined){console.warn('THREE.Vector2: .sub() now only accepts one argument. Use .subVectors( a, b ) instead.');return this.subVectors(v,w);}this.x-=v.x;this.y-=v.y;return this;}subScalar(s){this.x-=s;this.y-=s;return this;}subVectors(a,b){this.x=a.x-b.x;this.y=a.y-b.y;return this;}multiply(v){this.x*=v.x;this.y*=v.y;return this;}multiplyScalar(scalar){this.x*=scalar;this.y*=scalar;return this;}divide(v){this.x/=v.x;this.y/=v.y;return this;}divideScalar(scalar){return this.multiplyScalar(1/scalar);}applyMatrix3(m){const x=this.x,y=this.y;const e=m.elements;this.x=e[0]*x+e[3]*y+e[6];this.y=e[1]*x+e[4]*y+e[7];return this;}min(v){this.x=Math.min(this.x,v.x);this.y=Math.min(this.y,v.y);return this;}max(v){this.x=Math.max(this.x,v.x);this.y=Math.max(this.y,v.y);return this;}clamp(min,max){// assumes min < max, componentwise
 	this.x=Math.max(min.x,Math.min(max.x,this.x));this.y=Math.max(min.y,Math.min(max.y,this.y));return this;}clampScalar(minVal,maxVal){this.x=Math.max(minVal,Math.min(maxVal,this.x));this.y=Math.max(minVal,Math.min(maxVal,this.y));return this;}clampLength(min,max){const length=this.length();return this.divideScalar(length||1).multiplyScalar(Math.max(min,Math.min(max,length)));}floor(){this.x=Math.floor(this.x);this.y=Math.floor(this.y);return this;}ceil(){this.x=Math.ceil(this.x);this.y=Math.ceil(this.y);return this;}round(){this.x=Math.round(this.x);this.y=Math.round(this.y);return this;}roundToZero(){this.x=this.x<0?Math.ceil(this.x):Math.floor(this.x);this.y=this.y<0?Math.ceil(this.y):Math.floor(this.y);return this;}negate(){this.x=-this.x;this.y=-this.y;return this;}dot(v){return this.x*v.x+this.y*v.y;}cross(v){return this.x*v.y-this.y*v.x;}lengthSq(){return this.x*this.x+this.y*this.y;}length(){return Math.sqrt(this.x*this.x+this.y*this.y);}manhattanLength(){return Math.abs(this.x)+Math.abs(this.y);}normalize(){return this.divideScalar(this.length()||1);}angle(){// computes the angle in radians with respect to the positive x-axis
 	const angle=Math.atan2(-this.y,-this.x)+Math.PI;return angle;}distanceTo(v){return Math.sqrt(this.distanceToSquared(v));}distanceToSquared(v){const dx=this.x-v.x,dy=this.y-v.y;return dx*dx+dy*dy;}manhattanDistanceTo(v){return Math.abs(this.x-v.x)+Math.abs(this.y-v.y);}setLength(length){return this.normalize().multiplyScalar(length);}lerp(v,alpha){this.x+=(v.x-this.x)*alpha;this.y+=(v.y-this.y)*alpha;return this;}lerpVectors(v1,v2,alpha){this.x=v1.x+(v2.x-v1.x)*alpha;this.y=v1.y+(v2.y-v1.y)*alpha;return this;}equals(v){return v.x===this.x&&v.y===this.y;}fromArray(array,offset=0){this.x=array[offset];this.y=array[offset+1];return this;}toArray(array=[],offset=0){array[offset]=this.x;array[offset+1]=this.y;return array;}fromBufferAttribute(attribute,index,offset){if(offset!==undefined){console.warn('THREE.Vector2: offset has been removed from .fromBufferAttribute().');}this.x=attribute.getX(index);this.y=attribute.getY(index);return this;}rotateAround(center,angle){const c=Math.cos(angle),s=Math.sin(angle);const x=this.x-center.x;const y=this.y-center.y;this.x=x*c-y*s+center.x;this.y=x*s+y*c+center.y;return this;}random(){this.x=Math.random();this.y=Math.random();return this;}*[Symbol.iterator](){yield this.x;yield this.y;}}class Matrix3{constructor(){this.isMatrix3=true;this.elements=[1,0,0,0,1,0,0,0,1];if(arguments.length>0){console.error('THREE.Matrix3: the constructor no longer reads arguments. use .set() instead.');}}set(n11,n12,n13,n21,n22,n23,n31,n32,n33){const te=this.elements;te[0]=n11;te[1]=n21;te[2]=n31;te[3]=n12;te[4]=n22;te[5]=n32;te[6]=n13;te[7]=n23;te[8]=n33;return this;}identity(){this.set(1,0,0,0,1,0,0,0,1);return this;}copy(m){const te=this.elements;const me=m.elements;te[0]=me[0];te[1]=me[1];te[2]=me[2];te[3]=me[3];te[4]=me[4];te[5]=me[5];te[6]=me[6];te[7]=me[7];te[8]=me[8];return this;}extractBasis(xAxis,yAxis,zAxis){xAxis.setFromMatrix3Column(this,0);yAxis.setFromMatrix3Column(this,1);zAxis.setFromMatrix3Column(this,2);return this;}setFromMatrix4(m){const me=m.elements;this.set(me[0],me[4],me[8],me[1],me[5],me[9],me[2],me[6],me[10]);return this;}multiply(m){return this.multiplyMatrices(this,m);}premultiply(m){return this.multiplyMatrices(m,this);}multiplyMatrices(a,b){const ae=a.elements;const be=b.elements;const te=this.elements;const a11=ae[0],a12=ae[3],a13=ae[6];const a21=ae[1],a22=ae[4],a23=ae[7];const a31=ae[2],a32=ae[5],a33=ae[8];const b11=be[0],b12=be[3],b13=be[6];const b21=be[1],b22=be[4],b23=be[7];const b31=be[2],b32=be[5],b33=be[8];te[0]=a11*b11+a12*b21+a13*b31;te[3]=a11*b12+a12*b22+a13*b32;te[6]=a11*b13+a12*b23+a13*b33;te[1]=a21*b11+a22*b21+a23*b31;te[4]=a21*b12+a22*b22+a23*b32;te[7]=a21*b13+a22*b23+a23*b33;te[2]=a31*b11+a32*b21+a33*b31;te[5]=a31*b12+a32*b22+a33*b32;te[8]=a31*b13+a32*b23+a33*b33;return this;}multiplyScalar(s){const te=this.elements;te[0]*=s;te[3]*=s;te[6]*=s;te[1]*=s;te[4]*=s;te[7]*=s;te[2]*=s;te[5]*=s;te[8]*=s;return this;}determinant(){const te=this.elements;const a=te[0],b=te[1],c=te[2],d=te[3],e=te[4],f=te[5],g=te[6],h=te[7],i=te[8];return a*e*i-a*f*h-b*d*i+b*f*g+c*d*h-c*e*g;}invert(){const te=this.elements,n11=te[0],n21=te[1],n31=te[2],n12=te[3],n22=te[4],n32=te[5],n13=te[6],n23=te[7],n33=te[8],t11=n33*n22-n32*n23,t12=n32*n13-n33*n12,t13=n23*n12-n22*n13,det=n11*t11+n21*t12+n31*t13;if(det===0)return this.set(0,0,0,0,0,0,0,0,0);const detInv=1/det;te[0]=t11*detInv;te[1]=(n31*n23-n33*n21)*detInv;te[2]=(n32*n21-n31*n22)*detInv;te[3]=t12*detInv;te[4]=(n33*n11-n31*n13)*detInv;te[5]=(n31*n12-n32*n11)*detInv;te[6]=t13*detInv;te[7]=(n21*n13-n23*n11)*detInv;te[8]=(n22*n11-n21*n12)*detInv;return this;}transpose(){let tmp;const m=this.elements;tmp=m[1];m[1]=m[3];m[3]=tmp;tmp=m[2];m[2]=m[6];m[6]=tmp;tmp=m[5];m[5]=m[7];m[7]=tmp;return this;}getNormalMatrix(matrix4){return this.setFromMatrix4(matrix4).invert().transpose();}transposeIntoArray(r){const m=this.elements;r[0]=m[0];r[1]=m[3];r[2]=m[6];r[3]=m[1];r[4]=m[4];r[5]=m[7];r[6]=m[2];r[7]=m[5];r[8]=m[8];return this;}setUvTransform(tx,ty,sx,sy,rotation,cx,cy){const c=Math.cos(rotation);const s=Math.sin(rotation);this.set(sx*c,sx*s,-sx*(c*cx+s*cy)+cx+tx,-sy*s,sy*c,-sy*(-s*cx+c*cy)+cy+ty,0,0,1);return this;}scale(sx,sy){const te=this.elements;te[0]*=sx;te[3]*=sx;te[6]*=sx;te[1]*=sy;te[4]*=sy;te[7]*=sy;return this;}rotate(theta){const c=Math.cos(theta);const s=Math.sin(theta);const te=this.elements;const a11=te[0],a12=te[3],a13=te[6];const a21=te[1],a22=te[4],a23=te[7];te[0]=c*a11+s*a21;te[3]=c*a12+s*a22;te[6]=c*a13+s*a23;te[1]=-s*a11+c*a21;te[4]=-s*a12+c*a22;te[7]=-s*a13+c*a23;return this;}translate(tx,ty){const te=this.elements;te[0]+=tx*te[2];te[3]+=tx*te[5];te[6]+=tx*te[8];te[1]+=ty*te[2];te[4]+=ty*te[5];te[7]+=ty*te[8];return this;}equals(matrix){const te=this.elements;const me=matrix.elements;for(let i=0;i<9;i++){if(te[i]!==me[i])return false;}return true;}fromArray(array,offset=0){for(let i=0;i<9;i++){this.elements[i]=array[i+offset];}return this;}toArray(array=[],offset=0){const te=this.elements;array[offset]=te[0];array[offset+1]=te[1];array[offset+2]=te[2];array[offset+3]=te[3];array[offset+4]=te[4];array[offset+5]=te[5];array[offset+6]=te[6];array[offset+7]=te[7];array[offset+8]=te[8];return array;}clone(){return new this.constructor().fromArray(this.elements);}}function arrayNeedsUint32(array){// assumes larger values usually on last
 	for(let i=array.length-1;i>=0;--i){if(array[i]>65535)return true;}return false;}function createElementNS(name){return document.createElementNS('http://www.w3.org/1999/xhtml',name);}function SRGBToLinear(c){return c<0.04045?c*0.0773993808:Math.pow(c*0.9478672986+0.0521327014,2.4);}function LinearToSRGB(c){return c<0.0031308?c*12.92:1.055*Math.pow(c,0.41666)-0.055;}// JavaScript RGB-to-RGB transforms, defined as
@@ -8486,7 +8499,7 @@
 	_m1$2.copy(this);const invSX=1/sx;const invSY=1/sy;const invSZ=1/sz;_m1$2.elements[0]*=invSX;_m1$2.elements[1]*=invSX;_m1$2.elements[2]*=invSX;_m1$2.elements[4]*=invSY;_m1$2.elements[5]*=invSY;_m1$2.elements[6]*=invSY;_m1$2.elements[8]*=invSZ;_m1$2.elements[9]*=invSZ;_m1$2.elements[10]*=invSZ;quaternion.setFromRotationMatrix(_m1$2);scale.x=sx;scale.y=sy;scale.z=sz;return this;}makePerspective(left,right,top,bottom,near,far){if(far===undefined){console.warn('THREE.Matrix4: .makePerspective() has been redefined and has a new signature. Please check the docs.');}const te=this.elements;const x=2*near/(right-left);const y=2*near/(top-bottom);const a=(right+left)/(right-left);const b=(top+bottom)/(top-bottom);const c=-(far+near)/(far-near);const d=-2*far*near/(far-near);te[0]=x;te[4]=0;te[8]=a;te[12]=0;te[1]=0;te[5]=y;te[9]=b;te[13]=0;te[2]=0;te[6]=0;te[10]=c;te[14]=d;te[3]=0;te[7]=0;te[11]=-1;te[15]=0;return this;}makeOrthographic(left,right,top,bottom,near,far){const te=this.elements;const w=1.0/(right-left);const h=1.0/(top-bottom);const p=1.0/(far-near);const x=(right+left)*w;const y=(top+bottom)*h;const z=(far+near)*p;te[0]=2*w;te[4]=0;te[8]=0;te[12]=-x;te[1]=0;te[5]=2*h;te[9]=0;te[13]=-y;te[2]=0;te[6]=0;te[10]=-2*p;te[14]=-z;te[3]=0;te[7]=0;te[11]=0;te[15]=1;return this;}equals(matrix){const te=this.elements;const me=matrix.elements;for(let i=0;i<16;i++){if(te[i]!==me[i])return false;}return true;}fromArray(array,offset=0){for(let i=0;i<16;i++){this.elements[i]=array[i+offset];}return this;}toArray(array=[],offset=0){const te=this.elements;array[offset]=te[0];array[offset+1]=te[1];array[offset+2]=te[2];array[offset+3]=te[3];array[offset+4]=te[4];array[offset+5]=te[5];array[offset+6]=te[6];array[offset+7]=te[7];array[offset+8]=te[8];array[offset+9]=te[9];array[offset+10]=te[10];array[offset+11]=te[11];array[offset+12]=te[12];array[offset+13]=te[13];array[offset+14]=te[14];array[offset+15]=te[15];return array;}}const _v1$5=/*@__PURE__*/new Vector3();const _m1$2=/*@__PURE__*/new Matrix4();const _zero=/*@__PURE__*/new Vector3(0,0,0);const _one=/*@__PURE__*/new Vector3(1,1,1);const _x=/*@__PURE__*/new Vector3();const _y=/*@__PURE__*/new Vector3();const _z=/*@__PURE__*/new Vector3();const _matrix$1=/*@__PURE__*/new Matrix4();const _quaternion$3=/*@__PURE__*/new Quaternion();class Euler{constructor(x=0,y=0,z=0,order=Euler.DefaultOrder){this.isEuler=true;this._x=x;this._y=y;this._z=z;this._order=order;}get x(){return this._x;}set x(value){this._x=value;this._onChangeCallback();}get y(){return this._y;}set y(value){this._y=value;this._onChangeCallback();}get z(){return this._z;}set z(value){this._z=value;this._onChangeCallback();}get order(){return this._order;}set order(value){this._order=value;this._onChangeCallback();}set(x,y,z,order=this._order){this._x=x;this._y=y;this._z=z;this._order=order;this._onChangeCallback();return this;}clone(){return new this.constructor(this._x,this._y,this._z,this._order);}copy(euler){this._x=euler._x;this._y=euler._y;this._z=euler._z;this._order=euler._order;this._onChangeCallback();return this;}setFromRotationMatrix(m,order=this._order,update=true){// assumes the upper 3x3 of m is a pure rotation matrix (i.e, unscaled)
 	const te=m.elements;const m11=te[0],m12=te[4],m13=te[8];const m21=te[1],m22=te[5],m23=te[9];const m31=te[2],m32=te[6],m33=te[10];switch(order){case'XYZ':this._y=Math.asin(clamp(m13,-1,1));if(Math.abs(m13)<0.9999999){this._x=Math.atan2(-m23,m33);this._z=Math.atan2(-m12,m11);}else {this._x=Math.atan2(m32,m22);this._z=0;}break;case'YXZ':this._x=Math.asin(-clamp(m23,-1,1));if(Math.abs(m23)<0.9999999){this._y=Math.atan2(m13,m33);this._z=Math.atan2(m21,m22);}else {this._y=Math.atan2(-m31,m11);this._z=0;}break;case'ZXY':this._x=Math.asin(clamp(m32,-1,1));if(Math.abs(m32)<0.9999999){this._y=Math.atan2(-m31,m33);this._z=Math.atan2(-m12,m22);}else {this._y=0;this._z=Math.atan2(m21,m11);}break;case'ZYX':this._y=Math.asin(-clamp(m31,-1,1));if(Math.abs(m31)<0.9999999){this._x=Math.atan2(m32,m33);this._z=Math.atan2(m21,m11);}else {this._x=0;this._z=Math.atan2(-m12,m22);}break;case'YZX':this._z=Math.asin(clamp(m21,-1,1));if(Math.abs(m21)<0.9999999){this._x=Math.atan2(-m23,m22);this._y=Math.atan2(-m31,m11);}else {this._x=0;this._y=Math.atan2(m13,m33);}break;case'XZY':this._z=Math.asin(-clamp(m12,-1,1));if(Math.abs(m12)<0.9999999){this._x=Math.atan2(m32,m22);this._y=Math.atan2(m13,m11);}else {this._x=Math.atan2(-m23,m33);this._y=0;}break;default:console.warn('THREE.Euler: .setFromRotationMatrix() encountered an unknown order: '+order);}this._order=order;if(update===true)this._onChangeCallback();return this;}setFromQuaternion(q,order,update){_matrix$1.makeRotationFromQuaternion(q);return this.setFromRotationMatrix(_matrix$1,order,update);}setFromVector3(v,order=this._order){return this.set(v.x,v.y,v.z,order);}reorder(newOrder){// WARNING: this discards revolution information -bhouston
 	_quaternion$3.setFromEuler(this);return this.setFromQuaternion(_quaternion$3,newOrder);}equals(euler){return euler._x===this._x&&euler._y===this._y&&euler._z===this._z&&euler._order===this._order;}fromArray(array){this._x=array[0];this._y=array[1];this._z=array[2];if(array[3]!==undefined)this._order=array[3];this._onChangeCallback();return this;}toArray(array=[],offset=0){array[offset]=this._x;array[offset+1]=this._y;array[offset+2]=this._z;array[offset+3]=this._order;return array;}_onChange(callback){this._onChangeCallback=callback;return this;}_onChangeCallback(){}*[Symbol.iterator](){yield this._x;yield this._y;yield this._z;yield this._order;}// @deprecated since r138, 02cf0df1cb4575d5842fef9c85bb5a89fe020d53
-	toVector3(){console.error('THREE.Euler: .toVector3() has been removed. Use Vector3.setFromEuler() instead');}}Euler.DefaultOrder='XYZ';Euler.RotationOrders=['XYZ','YZX','ZXY','XZY','YXZ','ZYX'];class Layers{constructor(){this.mask=1|0;}set(channel){this.mask=(1<<channel|0)>>>0;}enable(channel){this.mask|=1<<channel|0;}enableAll(){this.mask=0xffffffff|0;}toggle(channel){this.mask^=1<<channel|0;}disable(channel){this.mask&=~(1<<channel|0);}disableAll(){this.mask=0;}test(layers){return (this.mask&layers.mask)!==0;}isEnabled(channel){return (this.mask&(1<<channel|0))!==0;}}let _object3DId=0;const _v1$4=/*@__PURE__*/new Vector3();const _q1=/*@__PURE__*/new Quaternion();const _m1$1=/*@__PURE__*/new Matrix4();const _target=/*@__PURE__*/new Vector3();const _position$3=/*@__PURE__*/new Vector3();const _scale$2=/*@__PURE__*/new Vector3();const _quaternion$2=/*@__PURE__*/new Quaternion();const _xAxis=/*@__PURE__*/new Vector3(1,0,0);const _yAxis=/*@__PURE__*/new Vector3(0,1,0);const _zAxis=/*@__PURE__*/new Vector3(0,0,1);const _addedEvent={type:'added'};const _removedEvent={type:'removed'};class Object3D extends EventDispatcher{constructor(){super();this.isObject3D=true;Object.defineProperty(this,'id',{value:_object3DId++});this.uuid=generateUUID();this.name='';this.type='Object3D';this.parent=null;this.children=[];this.up=Object3D.DefaultUp.clone();const position=new Vector3();const rotation=new Euler();const quaternion=new Quaternion();const scale=new Vector3(1,1,1);function onRotationChange(){quaternion.setFromEuler(rotation,false);}function onQuaternionChange(){rotation.setFromQuaternion(quaternion,undefined,false);}rotation._onChange(onRotationChange);quaternion._onChange(onQuaternionChange);Object.defineProperties(this,{position:{configurable:true,enumerable:true,value:position},rotation:{configurable:true,enumerable:true,value:rotation},quaternion:{configurable:true,enumerable:true,value:quaternion},scale:{configurable:true,enumerable:true,value:scale},modelViewMatrix:{value:new Matrix4()},normalMatrix:{value:new Matrix3()}});this.matrix=new Matrix4();this.matrixWorld=new Matrix4();this.matrixAutoUpdate=Object3D.DefaultMatrixAutoUpdate;this.matrixWorldNeedsUpdate=false;this.layers=new Layers();this.visible=true;this.castShadow=false;this.receiveShadow=false;this.frustumCulled=true;this.renderOrder=0;this.animations=[];this.userData={};}onBeforeRender(){}onAfterRender(){}applyMatrix4(matrix){if(this.matrixAutoUpdate)this.updateMatrix();this.matrix.premultiply(matrix);this.matrix.decompose(this.position,this.quaternion,this.scale);}applyQuaternion(q){this.quaternion.premultiply(q);return this;}setRotationFromAxisAngle(axis,angle){// assumes axis is normalized
+	toVector3(){console.error('THREE.Euler: .toVector3() has been removed. Use Vector3.setFromEuler() instead');}}Euler.DefaultOrder='XYZ';Euler.RotationOrders=['XYZ','YZX','ZXY','XZY','YXZ','ZYX'];class Layers{constructor(){this.mask=1|0;}set(channel){this.mask=(1<<channel|0)>>>0;}enable(channel){this.mask|=1<<channel|0;}enableAll(){this.mask=0xffffffff|0;}toggle(channel){this.mask^=1<<channel|0;}disable(channel){this.mask&=~(1<<channel|0);}disableAll(){this.mask=0;}test(layers){return (this.mask&layers.mask)!==0;}isEnabled(channel){return (this.mask&(1<<channel|0))!==0;}}let _object3DId=0;const _v1$4=/*@__PURE__*/new Vector3();const _q1=/*@__PURE__*/new Quaternion();const _m1$1=/*@__PURE__*/new Matrix4();const _target$1=/*@__PURE__*/new Vector3();const _position$3=/*@__PURE__*/new Vector3();const _scale$2=/*@__PURE__*/new Vector3();const _quaternion$2=/*@__PURE__*/new Quaternion();const _xAxis=/*@__PURE__*/new Vector3(1,0,0);const _yAxis=/*@__PURE__*/new Vector3(0,1,0);const _zAxis=/*@__PURE__*/new Vector3(0,0,1);const _addedEvent={type:'added'};const _removedEvent={type:'removed'};class Object3D extends EventDispatcher{constructor(){super();this.isObject3D=true;Object.defineProperty(this,'id',{value:_object3DId++});this.uuid=generateUUID();this.name='';this.type='Object3D';this.parent=null;this.children=[];this.up=Object3D.DefaultUp.clone();const position=new Vector3();const rotation=new Euler();const quaternion=new Quaternion();const scale=new Vector3(1,1,1);function onRotationChange(){quaternion.setFromEuler(rotation,false);}function onQuaternionChange(){rotation.setFromQuaternion(quaternion,undefined,false);}rotation._onChange(onRotationChange);quaternion._onChange(onQuaternionChange);Object.defineProperties(this,{position:{configurable:true,enumerable:true,value:position},rotation:{configurable:true,enumerable:true,value:rotation},quaternion:{configurable:true,enumerable:true,value:quaternion},scale:{configurable:true,enumerable:true,value:scale},modelViewMatrix:{value:new Matrix4()},normalMatrix:{value:new Matrix3()}});this.matrix=new Matrix4();this.matrixWorld=new Matrix4();this.matrixAutoUpdate=Object3D.DefaultMatrixAutoUpdate;this.matrixWorldNeedsUpdate=false;this.layers=new Layers();this.visible=true;this.castShadow=false;this.receiveShadow=false;this.frustumCulled=true;this.renderOrder=0;this.animations=[];this.userData={};}onBeforeRender(){}onAfterRender(){}applyMatrix4(matrix){if(this.matrixAutoUpdate)this.updateMatrix();this.matrix.premultiply(matrix);this.matrix.decompose(this.position,this.quaternion,this.scale);}applyQuaternion(q){this.quaternion.premultiply(q);return this;}setRotationFromAxisAngle(axis,angle){// assumes axis is normalized
 	this.quaternion.setFromAxisAngle(axis,angle);}setRotationFromEuler(euler){this.quaternion.setFromEuler(euler,true);}setRotationFromMatrix(m){// assumes the upper 3x3 of m is a pure rotation matrix (i.e, unscaled)
 	this.quaternion.setFromRotationMatrix(m);}setRotationFromQuaternion(q){// assumes q is normalized
 	this.quaternion.copy(q);}rotateOnAxis(axis,angle){// rotate object on axis in object space
@@ -8497,7 +8510,7 @@
 	_q1.setFromAxisAngle(axis,angle);this.quaternion.premultiply(_q1);return this;}rotateX(angle){return this.rotateOnAxis(_xAxis,angle);}rotateY(angle){return this.rotateOnAxis(_yAxis,angle);}rotateZ(angle){return this.rotateOnAxis(_zAxis,angle);}translateOnAxis(axis,distance){// translate object by distance along axis in object space
 	// axis is assumed to be normalized
 	_v1$4.copy(axis).applyQuaternion(this.quaternion);this.position.add(_v1$4.multiplyScalar(distance));return this;}translateX(distance){return this.translateOnAxis(_xAxis,distance);}translateY(distance){return this.translateOnAxis(_yAxis,distance);}translateZ(distance){return this.translateOnAxis(_zAxis,distance);}localToWorld(vector){return vector.applyMatrix4(this.matrixWorld);}worldToLocal(vector){return vector.applyMatrix4(_m1$1.copy(this.matrixWorld).invert());}lookAt(x,y,z){// This method does not support objects having non-uniformly-scaled parent(s)
-	if(x.isVector3){_target.copy(x);}else {_target.set(x,y,z);}const parent=this.parent;this.updateWorldMatrix(true,false);_position$3.setFromMatrixPosition(this.matrixWorld);if(this.isCamera||this.isLight){_m1$1.lookAt(_position$3,_target,this.up);}else {_m1$1.lookAt(_target,_position$3,this.up);}this.quaternion.setFromRotationMatrix(_m1$1);if(parent){_m1$1.extractRotation(parent.matrixWorld);_q1.setFromRotationMatrix(_m1$1);this.quaternion.premultiply(_q1.invert());}}add(object){if(arguments.length>1){for(let i=0;i<arguments.length;i++){this.add(arguments[i]);}return this;}if(object===this){console.error('THREE.Object3D.add: object can\'t be added as a child of itself.',object);return this;}if(object&&object.isObject3D){if(object.parent!==null){object.parent.remove(object);}object.parent=this;this.children.push(object);object.dispatchEvent(_addedEvent);}else {console.error('THREE.Object3D.add: object not an instance of THREE.Object3D.',object);}return this;}remove(object){if(arguments.length>1){for(let i=0;i<arguments.length;i++){this.remove(arguments[i]);}return this;}const index=this.children.indexOf(object);if(index!==-1){object.parent=null;this.children.splice(index,1);object.dispatchEvent(_removedEvent);}return this;}removeFromParent(){const parent=this.parent;if(parent!==null){parent.remove(this);}return this;}clear(){for(let i=0;i<this.children.length;i++){const object=this.children[i];object.parent=null;object.dispatchEvent(_removedEvent);}this.children.length=0;return this;}attach(object){// adds object as a child of this, while maintaining the object's world transform
+	if(x.isVector3){_target$1.copy(x);}else {_target$1.set(x,y,z);}const parent=this.parent;this.updateWorldMatrix(true,false);_position$3.setFromMatrixPosition(this.matrixWorld);if(this.isCamera||this.isLight){_m1$1.lookAt(_position$3,_target$1,this.up);}else {_m1$1.lookAt(_target$1,_position$3,this.up);}this.quaternion.setFromRotationMatrix(_m1$1);if(parent){_m1$1.extractRotation(parent.matrixWorld);_q1.setFromRotationMatrix(_m1$1);this.quaternion.premultiply(_q1.invert());}}add(object){if(arguments.length>1){for(let i=0;i<arguments.length;i++){this.add(arguments[i]);}return this;}if(object===this){console.error('THREE.Object3D.add: object can\'t be added as a child of itself.',object);return this;}if(object&&object.isObject3D){if(object.parent!==null){object.parent.remove(object);}object.parent=this;this.children.push(object);object.dispatchEvent(_addedEvent);}else {console.error('THREE.Object3D.add: object not an instance of THREE.Object3D.',object);}return this;}remove(object){if(arguments.length>1){for(let i=0;i<arguments.length;i++){this.remove(arguments[i]);}return this;}const index=this.children.indexOf(object);if(index!==-1){object.parent=null;this.children.splice(index,1);object.dispatchEvent(_removedEvent);}return this;}removeFromParent(){const parent=this.parent;if(parent!==null){parent.remove(this);}return this;}clear(){for(let i=0;i<this.children.length;i++){const object=this.children[i];object.parent=null;object.dispatchEvent(_removedEvent);}this.children.length=0;return this;}attach(object){// adds object as a child of this, while maintaining the object's world transform
 	// Note: This method does not support scene graphs having non-uniformly-scaled nodes(s)
 	this.updateWorldMatrix(true,false);_m1$1.copy(this.matrixWorld).invert();if(object.parent!==null){object.parent.updateWorldMatrix(true,false);_m1$1.multiply(object.parent.matrixWorld);}object.applyMatrix4(_m1$1);this.add(object);object.updateWorldMatrix(false,true);return this;}getObjectById(id){return this.getObjectByProperty('id',id);}getObjectByName(name){return this.getObjectByProperty('name',name);}getObjectByProperty(name,value){if(this[name]===value)return this;for(let i=0,l=this.children.length;i<l;i++){const child=this.children[i];const object=child.getObjectByProperty(name,value);if(object!==undefined){return object;}}return undefined;}getWorldPosition(target){this.updateWorldMatrix(true,false);return target.setFromMatrixPosition(this.matrixWorld);}getWorldQuaternion(target){this.updateWorldMatrix(true,false);this.matrixWorld.decompose(_position$3,target,_scale$2);return target;}getWorldScale(target){this.updateWorldMatrix(true,false);this.matrixWorld.decompose(_position$3,_quaternion$2,target);return target;}getWorldDirection(target){this.updateWorldMatrix(true,false);const e=this.matrixWorld.elements;return target.set(e[8],e[9],e[10]).normalize();}raycast(){}traverse(callback){callback(this);const children=this.children;for(let i=0,l=children.length;i<l;i++){children[i].traverse(callback);}}traverseVisible(callback){if(this.visible===false)return;callback(this);const children=this.children;for(let i=0,l=children.length;i<l;i++){children[i].traverseVisible(callback);}}traverseAncestors(callback){const parent=this.parent;if(parent!==null){callback(parent);parent.traverseAncestors(callback);}}updateMatrix(){this.matrix.compose(this.position,this.quaternion,this.scale);this.matrixWorldNeedsUpdate=true;}updateMatrixWorld(force){if(this.matrixAutoUpdate)this.updateMatrix();if(this.matrixWorldNeedsUpdate||force){if(this.parent===null){this.matrixWorld.copy(this.matrix);}else {this.matrixWorld.multiplyMatrices(this.parent.matrixWorld,this.matrix);}this.matrixWorldNeedsUpdate=false;force=true;}// update children
 	const children=this.children;for(let i=0,l=children.length;i<l;i++){children[i].updateMatrixWorld(force);}}updateWorldMatrix(updateParents,updateChildren){const parent=this.parent;if(updateParents===true&&parent!==null){parent.updateWorldMatrix(true,false);}if(this.matrixAutoUpdate)this.updateMatrix();if(this.parent===null){this.matrixWorld.copy(this.matrix);}else {this.matrixWorld.multiplyMatrices(this.parent.matrixWorld,this.matrix);}// update children
@@ -9474,7 +9487,8 @@
 	// in the constructor
 	this.onStart=undefined;this.onLoad=onLoad;this.onProgress=onProgress;this.onError=onError;this.itemStart=function(url){itemsTotal++;if(isLoading===false){if(scope.onStart!==undefined){scope.onStart(url,itemsLoaded,itemsTotal);}}isLoading=true;};this.itemEnd=function(url){itemsLoaded++;if(scope.onProgress!==undefined){scope.onProgress(url,itemsLoaded,itemsTotal);}if(itemsLoaded===itemsTotal){isLoading=false;if(scope.onLoad!==undefined){scope.onLoad();}}};this.itemError=function(url){if(scope.onError!==undefined){scope.onError(url);}};this.resolveURL=function(url){if(urlModifier){return urlModifier(url);}return url;};this.setURLModifier=function(transform){urlModifier=transform;return this;};this.addHandler=function(regex,loader){handlers.push(regex,loader);return this;};this.removeHandler=function(regex){const index=handlers.indexOf(regex);if(index!==-1){handlers.splice(index,2);}return this;};this.getHandler=function(file){for(let i=0,l=handlers.length;i<l;i+=2){const regex=handlers[i];const loader=handlers[i+1];if(regex.global)regex.lastIndex=0;// see #17920
 	if(regex.test(file)){return loader;}}return null;};}}const DefaultLoadingManager=new LoadingManager();class Loader{constructor(manager){this.manager=manager!==undefined?manager:DefaultLoadingManager;this.crossOrigin='anonymous';this.withCredentials=false;this.path='';this.resourcePath='';this.requestHeader={};}load(){}loadAsync(url,onProgress){const scope=this;return new Promise(function(resolve,reject){scope.load(url,resolve,onProgress,reject);});}parse(){}setCrossOrigin(crossOrigin){this.crossOrigin=crossOrigin;return this;}setWithCredentials(value){this.withCredentials=value;return this;}setPath(path){this.path=path;return this;}setResourcePath(resourcePath){this.resourcePath=resourcePath;return this;}setRequestHeader(requestHeader){this.requestHeader=requestHeader;return this;}}class ImageLoader extends Loader{constructor(manager){super(manager);}load(url,onLoad,onProgress,onError){if(this.path!==undefined)url=this.path+url;url=this.manager.resolveURL(url);const scope=this;const cached=Cache.get(url);if(cached!==undefined){scope.manager.itemStart(url);setTimeout(function(){if(onLoad)onLoad(cached);scope.manager.itemEnd(url);},0);return cached;}const image=createElementNS('img');function onImageLoad(){removeEventListeners();Cache.add(url,this);if(onLoad)onLoad(this);scope.manager.itemEnd(url);}function onImageError(event){removeEventListeners();if(onError)onError(event);scope.manager.itemError(url);scope.manager.itemEnd(url);}function removeEventListeners(){image.removeEventListener('load',onImageLoad,false);image.removeEventListener('error',onImageError,false);}image.addEventListener('load',onImageLoad,false);image.addEventListener('error',onImageError,false);if(url.slice(0,5)!=='data:'){if(this.crossOrigin!==undefined)image.crossOrigin=this.crossOrigin;}scope.manager.itemStart(url);image.src=url;return image;}}class TextureLoader extends Loader{constructor(manager){super(manager);}load(url,onLoad,onProgress,onError){const texture=new Texture();const loader=new ImageLoader(this.manager);loader.setCrossOrigin(this.crossOrigin);loader.setPath(this.path);loader.load(url,function(image){texture.image=image;texture.needsUpdate=true;if(onLoad!==undefined){onLoad(texture);}},onProgress,onError);return texture;}}class Light extends Object3D{constructor(color,intensity=1){super();this.isLight=true;this.type='Light';this.color=new Color(color);this.intensity=intensity;}dispose(){// Empty here in base class; some subclasses override.
-	}copy(source,recursive){super.copy(source,recursive);this.color.copy(source.color);this.intensity=source.intensity;return this;}toJSON(meta){const data=super.toJSON(meta);data.object.color=this.color.getHex();data.object.intensity=this.intensity;if(this.groundColor!==undefined)data.object.groundColor=this.groundColor.getHex();if(this.distance!==undefined)data.object.distance=this.distance;if(this.angle!==undefined)data.object.angle=this.angle;if(this.decay!==undefined)data.object.decay=this.decay;if(this.penumbra!==undefined)data.object.penumbra=this.penumbra;if(this.shadow!==undefined)data.object.shadow=this.shadow.toJSON();return data;}}class HemisphereLight extends Light{constructor(skyColor,groundColor,intensity){super(skyColor,intensity);this.isHemisphereLight=true;this.type='HemisphereLight';this.position.copy(Object3D.DefaultUp);this.updateMatrix();this.groundColor=new Color(groundColor);}copy(source,recursive){super.copy(source,recursive);this.groundColor.copy(source.groundColor);return this;}}const _projScreenMatrix$1=/*@__PURE__*/new Matrix4();const _lightPositionWorld$1=/*@__PURE__*/new Vector3();const _lookTarget$1=/*@__PURE__*/new Vector3();class LightShadow{constructor(camera){this.camera=camera;this.bias=0;this.normalBias=0;this.radius=1;this.blurSamples=8;this.mapSize=new Vector2(512,512);this.map=null;this.mapPass=null;this.matrix=new Matrix4();this.autoUpdate=true;this.needsUpdate=false;this._frustum=new Frustum();this._frameExtents=new Vector2(1,1);this._viewportCount=1;this._viewports=[new Vector4(0,0,1,1)];}getViewportCount(){return this._viewportCount;}getFrustum(){return this._frustum;}updateMatrices(light){const shadowCamera=this.camera;const shadowMatrix=this.matrix;_lightPositionWorld$1.setFromMatrixPosition(light.matrixWorld);shadowCamera.position.copy(_lightPositionWorld$1);_lookTarget$1.setFromMatrixPosition(light.target.matrixWorld);shadowCamera.lookAt(_lookTarget$1);shadowCamera.updateMatrixWorld();_projScreenMatrix$1.multiplyMatrices(shadowCamera.projectionMatrix,shadowCamera.matrixWorldInverse);this._frustum.setFromProjectionMatrix(_projScreenMatrix$1);shadowMatrix.set(0.5,0.0,0.0,0.5,0.0,0.5,0.0,0.5,0.0,0.0,0.5,0.5,0.0,0.0,0.0,1.0);shadowMatrix.multiply(shadowCamera.projectionMatrix);shadowMatrix.multiply(shadowCamera.matrixWorldInverse);}getViewport(viewportIndex){return this._viewports[viewportIndex];}getFrameExtents(){return this._frameExtents;}dispose(){if(this.map){this.map.dispose();}if(this.mapPass){this.mapPass.dispose();}}copy(source){this.camera=source.camera.clone();this.bias=source.bias;this.radius=source.radius;this.mapSize.copy(source.mapSize);return this;}clone(){return new this.constructor().copy(this);}toJSON(){const object={};if(this.bias!==0)object.bias=this.bias;if(this.normalBias!==0)object.normalBias=this.normalBias;if(this.radius!==1)object.radius=this.radius;if(this.mapSize.x!==512||this.mapSize.y!==512)object.mapSize=this.mapSize.toArray();object.camera=this.camera.toJSON(false).object;delete object.camera.matrix;return object;}}class DirectionalLightShadow extends LightShadow{constructor(){super(new OrthographicCamera(-5,5,5,-5,0.5,500));this.isDirectionalLightShadow=true;}}class DirectionalLight extends Light{constructor(color,intensity){super(color,intensity);this.isDirectionalLight=true;this.type='DirectionalLight';this.position.copy(Object3D.DefaultUp);this.updateMatrix();this.target=new Object3D();this.shadow=new DirectionalLightShadow();}dispose(){this.shadow.dispose();}copy(source){super.copy(source);this.target=source.target.clone();this.shadow=source.shadow.clone();return this;}}const _RESERVED_CHARS_RE='\\[\\]\\.:\\/';// only latin characters, and the unicode \p{L} is not yet supported. So
+	}copy(source,recursive){super.copy(source,recursive);this.color.copy(source.color);this.intensity=source.intensity;return this;}toJSON(meta){const data=super.toJSON(meta);data.object.color=this.color.getHex();data.object.intensity=this.intensity;if(this.groundColor!==undefined)data.object.groundColor=this.groundColor.getHex();if(this.distance!==undefined)data.object.distance=this.distance;if(this.angle!==undefined)data.object.angle=this.angle;if(this.decay!==undefined)data.object.decay=this.decay;if(this.penumbra!==undefined)data.object.penumbra=this.penumbra;if(this.shadow!==undefined)data.object.shadow=this.shadow.toJSON();return data;}}class HemisphereLight extends Light{constructor(skyColor,groundColor,intensity){super(skyColor,intensity);this.isHemisphereLight=true;this.type='HemisphereLight';this.position.copy(Object3D.DefaultUp);this.updateMatrix();this.groundColor=new Color(groundColor);}copy(source,recursive){super.copy(source,recursive);this.groundColor.copy(source.groundColor);return this;}}const _projScreenMatrix$1=/*@__PURE__*/new Matrix4();const _lightPositionWorld$1=/*@__PURE__*/new Vector3();const _lookTarget$1=/*@__PURE__*/new Vector3();class LightShadow{constructor(camera){this.camera=camera;this.bias=0;this.normalBias=0;this.radius=1;this.blurSamples=8;this.mapSize=new Vector2(512,512);this.map=null;this.mapPass=null;this.matrix=new Matrix4();this.autoUpdate=true;this.needsUpdate=false;this._frustum=new Frustum();this._frameExtents=new Vector2(1,1);this._viewportCount=1;this._viewports=[new Vector4(0,0,1,1)];}getViewportCount(){return this._viewportCount;}getFrustum(){return this._frustum;}updateMatrices(light){const shadowCamera=this.camera;const shadowMatrix=this.matrix;_lightPositionWorld$1.setFromMatrixPosition(light.matrixWorld);shadowCamera.position.copy(_lightPositionWorld$1);_lookTarget$1.setFromMatrixPosition(light.target.matrixWorld);shadowCamera.lookAt(_lookTarget$1);shadowCamera.updateMatrixWorld();_projScreenMatrix$1.multiplyMatrices(shadowCamera.projectionMatrix,shadowCamera.matrixWorldInverse);this._frustum.setFromProjectionMatrix(_projScreenMatrix$1);shadowMatrix.set(0.5,0.0,0.0,0.5,0.0,0.5,0.0,0.5,0.0,0.0,0.5,0.5,0.0,0.0,0.0,1.0);shadowMatrix.multiply(shadowCamera.projectionMatrix);shadowMatrix.multiply(shadowCamera.matrixWorldInverse);}getViewport(viewportIndex){return this._viewports[viewportIndex];}getFrameExtents(){return this._frameExtents;}dispose(){if(this.map){this.map.dispose();}if(this.mapPass){this.mapPass.dispose();}}copy(source){this.camera=source.camera.clone();this.bias=source.bias;this.radius=source.radius;this.mapSize.copy(source.mapSize);return this;}clone(){return new this.constructor().copy(this);}toJSON(){const object={};if(this.bias!==0)object.bias=this.bias;if(this.normalBias!==0)object.normalBias=this.normalBias;if(this.radius!==1)object.radius=this.radius;if(this.mapSize.x!==512||this.mapSize.y!==512)object.mapSize=this.mapSize.toArray();object.camera=this.camera.toJSON(false).object;delete object.camera.matrix;return object;}}class DirectionalLightShadow extends LightShadow{constructor(){super(new OrthographicCamera(-5,5,5,-5,0.5,500));this.isDirectionalLightShadow=true;}}class DirectionalLight extends Light{constructor(color,intensity){super(color,intensity);this.isDirectionalLight=true;this.type='DirectionalLight';this.position.copy(Object3D.DefaultUp);this.updateMatrix();this.target=new Object3D();this.shadow=new DirectionalLightShadow();}dispose(){this.shadow.dispose();}copy(source){super.copy(source);this.target=source.target.clone();this.shadow=source.shadow.clone();return this;}}class Clock{constructor(autoStart=true){this.autoStart=autoStart;this.startTime=0;this.oldTime=0;this.elapsedTime=0;this.running=false;}start(){this.startTime=now();this.oldTime=this.startTime;this.elapsedTime=0;this.running=true;}stop(){this.getElapsedTime();this.running=false;this.autoStart=false;}getElapsedTime(){this.getDelta();return this.elapsedTime;}getDelta(){let diff=0;if(this.autoStart&&!this.running){this.start();return 0;}if(this.running){const newTime=now();diff=(newTime-this.oldTime)/1000;this.oldTime=newTime;this.elapsedTime+=diff;}return diff;}}function now(){return (typeof performance==='undefined'?Date:performance).now();// see #10732
+	}const _RESERVED_CHARS_RE='\\[\\]\\.:\\/';// only latin characters, and the unicode \p{L} is not yet supported. So
 	// instead, we exclude reserved characters and match everything else.
 	const _wordChar='[^'+_RESERVED_CHARS_RE+']';const _wordCharOrDot='[^'+_RESERVED_CHARS_RE.replace('\\.','')+']';// Parent directories, delimited by '/' or ':'. Currently unused, but must
 	// be matched to parse the rest of the track name.
@@ -9505,6 +9519,288 @@
 	e+=0x38800000;// adjust bias
 	_mantissaTable[i]=m|e;}for(let i=1024;i<2048;++i){_mantissaTable[i]=0x38000000+(i-1024<<13);}for(let i=1;i<31;++i){_exponentTable[i]=i<<23;}_exponentTable[31]=0x47800000;_exponentTable[32]=0x80000000;for(let i=33;i<63;++i){_exponentTable[i]=0x80000000+(i-32<<23);}_exponentTable[63]=0xc7800000;for(let i=1;i<64;++i){if(i!==32){_offsetTable[i]=1024;}}// r133, c5bb5434555a3c3ddd784944a0a124f996fc721b
 	if(typeof __THREE_DEVTOOLS__!=='undefined'){__THREE_DEVTOOLS__.dispatchEvent(new CustomEvent('register',{detail:{revision:REVISION}}));}if(typeof window!=='undefined'){if(window.__THREE__){console.warn('WARNING: Multiple instances of Three.js being imported.');}else {window.__THREE__=REVISION;}}
+
+	const _lookDirection = new Vector3();
+
+	const _spherical = new Spherical();
+
+	const _target = new Vector3();
+
+	class FirstPersonControls {
+	  constructor(object, domElement) {
+	    if (domElement === undefined) {
+	      console.warn('THREE.FirstPersonControls: The second parameter "domElement" is now mandatory.');
+	      domElement = document;
+	    }
+
+	    this.object = object;
+	    this.domElement = domElement; // API
+
+	    this.enabled = true;
+	    this.movementSpeed = 1.0;
+	    this.lookSpeed = 0.005;
+	    this.lookVertical = true;
+	    this.autoForward = false;
+	    this.activeLook = true;
+	    this.heightSpeed = false;
+	    this.heightCoef = 1.0;
+	    this.heightMin = 0.0;
+	    this.heightMax = 1.0;
+	    this.constrainVertical = false;
+	    this.verticalMin = 0;
+	    this.verticalMax = Math.PI;
+	    this.mouseDragOn = false; // internals
+
+	    this.autoSpeedFactor = 0.0;
+	    this.mouseX = 0;
+	    this.mouseY = 0;
+	    this.moveForward = false;
+	    this.moveBackward = false;
+	    this.moveLeft = false;
+	    this.moveRight = false;
+	    this.viewHalfX = 0;
+	    this.viewHalfY = 0; // private variables
+
+	    let lat = 0;
+	    let lon = 0; //
+
+	    this.handleResize = function () {
+	      if (this.domElement === document) {
+	        this.viewHalfX = window.innerWidth / 2;
+	        this.viewHalfY = window.innerHeight / 2;
+	      } else {
+	        this.viewHalfX = this.domElement.offsetWidth / 2;
+	        this.viewHalfY = this.domElement.offsetHeight / 2;
+	      }
+	    };
+
+	    this.onMouseDown = function (event) {
+	      if (this.domElement !== document) {
+	        this.domElement.focus();
+	      }
+
+	      if (this.activeLook) {
+	        switch (event.button) {
+	          case 0:
+	            this.moveForward = true;
+	            break;
+
+	          case 2:
+	            this.moveBackward = true;
+	            break;
+	        }
+	      }
+
+	      this.mouseDragOn = true;
+	    };
+
+	    this.onMouseUp = function (event) {
+	      if (this.activeLook) {
+	        switch (event.button) {
+	          case 0:
+	            this.moveForward = false;
+	            break;
+
+	          case 2:
+	            this.moveBackward = false;
+	            break;
+	        }
+	      }
+
+	      this.mouseDragOn = false;
+	    };
+
+	    this.onMouseMove = function (event) {
+	      if (this.domElement === document) {
+	        this.mouseX = event.pageX - this.viewHalfX;
+	        this.mouseY = event.pageY - this.viewHalfY;
+	      } else {
+	        this.mouseX = event.pageX - this.domElement.offsetLeft - this.viewHalfX;
+	        this.mouseY = event.pageY - this.domElement.offsetTop - this.viewHalfY;
+	      }
+	    };
+
+	    this.onKeyDown = function (event) {
+	      switch (event.code) {
+	        case 'ArrowUp':
+	        case 'KeyW':
+	          this.moveForward = true;
+	          break;
+
+	        case 'ArrowLeft':
+	        case 'KeyA':
+	          this.moveLeft = true;
+	          break;
+
+	        case 'ArrowDown':
+	        case 'KeyS':
+	          this.moveBackward = true;
+	          break;
+
+	        case 'ArrowRight':
+	        case 'KeyD':
+	          this.moveRight = true;
+	          break;
+
+	        case 'KeyR':
+	          this.moveUp = true;
+	          break;
+
+	        case 'KeyF':
+	          this.moveDown = true;
+	          break;
+	      }
+	    };
+
+	    this.onKeyUp = function (event) {
+	      switch (event.code) {
+	        case 'ArrowUp':
+	        case 'KeyW':
+	          this.moveForward = false;
+	          break;
+
+	        case 'ArrowLeft':
+	        case 'KeyA':
+	          this.moveLeft = false;
+	          break;
+
+	        case 'ArrowDown':
+	        case 'KeyS':
+	          this.moveBackward = false;
+	          break;
+
+	        case 'ArrowRight':
+	        case 'KeyD':
+	          this.moveRight = false;
+	          break;
+
+	        case 'KeyR':
+	          this.moveUp = false;
+	          break;
+
+	        case 'KeyF':
+	          this.moveDown = false;
+	          break;
+	      }
+	    };
+
+	    this.lookAt = function (x, y, z) {
+	      if (x.isVector3) {
+	        _target.copy(x);
+	      } else {
+	        _target.set(x, y, z);
+	      }
+
+	      this.object.lookAt(_target);
+	      setOrientation(this);
+	      return this;
+	    };
+
+	    this.update = function () {
+	      const targetPosition = new Vector3();
+	      return function update(delta) {
+	        if (this.enabled === false) return;
+
+	        if (this.heightSpeed) {
+	          const y = MathUtils.clamp(this.object.position.y, this.heightMin, this.heightMax);
+	          const heightDelta = y - this.heightMin;
+	          this.autoSpeedFactor = delta * (heightDelta * this.heightCoef);
+	        } else {
+	          this.autoSpeedFactor = 0.0;
+	        }
+
+	        const actualMoveSpeed = delta * this.movementSpeed;
+	        if (this.moveForward || this.autoForward && !this.moveBackward) this.object.translateZ(-(actualMoveSpeed + this.autoSpeedFactor));
+	        if (this.moveBackward) this.object.translateZ(actualMoveSpeed);
+	        if (this.moveLeft) this.object.translateX(-actualMoveSpeed);
+	        if (this.moveRight) this.object.translateX(actualMoveSpeed);
+	        if (this.moveUp) this.object.translateY(actualMoveSpeed);
+	        if (this.moveDown) this.object.translateY(-actualMoveSpeed);
+	        let actualLookSpeed = delta * this.lookSpeed;
+
+	        if (!this.activeLook) {
+	          actualLookSpeed = 0;
+	        }
+
+	        let verticalLookRatio = 1;
+
+	        if (this.constrainVertical) {
+	          verticalLookRatio = Math.PI / (this.verticalMax - this.verticalMin);
+	        }
+
+	        lon -= this.mouseX * actualLookSpeed;
+	        if (this.lookVertical) lat -= this.mouseY * actualLookSpeed * verticalLookRatio;
+	        lat = Math.max(-85, Math.min(85, lat));
+	        let phi = MathUtils.degToRad(90 - lat);
+	        const theta = MathUtils.degToRad(lon);
+
+	        if (this.constrainVertical) {
+	          phi = MathUtils.mapLinear(phi, 0, Math.PI, this.verticalMin, this.verticalMax);
+	        }
+
+	        const position = this.object.position;
+	        targetPosition.setFromSphericalCoords(1, phi, theta).add(position);
+	        this.object.lookAt(targetPosition);
+	      };
+	    }();
+
+	    this.dispose = function () {
+	      this.domElement.removeEventListener('contextmenu', contextmenu);
+	      this.domElement.removeEventListener('mousedown', _onMouseDown);
+	      this.domElement.removeEventListener('mousemove', _onMouseMove);
+	      this.domElement.removeEventListener('mouseup', _onMouseUp);
+	      window.removeEventListener('keydown', _onKeyDown);
+	      window.removeEventListener('keyup', _onKeyUp);
+	    };
+
+	    const _onMouseMove = this.onMouseMove.bind(this);
+
+	    const _onMouseDown = this.onMouseDown.bind(this);
+
+	    const _onMouseUp = this.onMouseUp.bind(this);
+
+	    const _onKeyDown = this.onKeyDown.bind(this);
+
+	    const _onKeyUp = this.onKeyUp.bind(this);
+
+	    this.domElement.addEventListener('contextmenu', contextmenu);
+	    this.domElement.addEventListener('mousemove', _onMouseMove);
+	    this.domElement.addEventListener('mousedown', _onMouseDown);
+	    this.domElement.addEventListener('mouseup', _onMouseUp);
+	    window.addEventListener('keydown', _onKeyDown);
+	    window.addEventListener('keyup', _onKeyUp);
+
+	    function setOrientation(controls) {
+	      const quaternion = controls.object.quaternion;
+
+	      _lookDirection.set(0, 0, -1).applyQuaternion(quaternion);
+
+	      _spherical.setFromVector3(_lookDirection);
+
+	      lat = 90 - MathUtils.radToDeg(_spherical.phi);
+	      lon = MathUtils.radToDeg(_spherical.theta);
+	    }
+
+	    this.handleResize();
+	    setOrientation(this);
+	  }
+
+	}
+
+	function contextmenu(event) {
+	  event.preventDefault();
+	}
+
+	let controls;
+	const clock = new Clock();
+	function useFirstPersonControls(camera, renderer) {
+	  controls = new FirstPersonControls(camera, renderer.domElement);
+	  controls.movementSpeed = 20;
+	  controls.lookSpeed = 0.5;
+	}
+	function updateControls() {
+	  controls.update(clock.getDelta());
+	}
 
 	let cube, cube2;
 	new TextureLoader();
@@ -9588,828 +9884,6 @@
 	  // scene.add(helper);
 	}
 
-	// Unlike TrackballControls, it maintains the "up" direction object.up (+Y by default).
-	//
-	//    Orbit - left mouse / touch: one-finger move
-	//    Zoom - middle mouse, or mousewheel / touch: two-finger spread or squish
-	//    Pan - right mouse, or left mouse + ctrl/meta/shiftKey, or arrow keys / touch: two-finger move
-
-	const _changeEvent = {
-	  type: 'change'
-	};
-	const _startEvent = {
-	  type: 'start'
-	};
-	const _endEvent = {
-	  type: 'end'
-	};
-
-	class OrbitControls extends EventDispatcher {
-	  constructor(object, domElement) {
-	    super();
-	    if (domElement === undefined) console.warn('THREE.OrbitControls: The second parameter "domElement" is now mandatory.');
-	    if (domElement === document) console.error('THREE.OrbitControls: "document" should not be used as the target "domElement". Please use "renderer.domElement" instead.');
-	    this.object = object;
-	    this.domElement = domElement;
-	    this.domElement.style.touchAction = 'none'; // disable touch scroll
-	    // Set to false to disable this control
-
-	    this.enabled = true; // "target" sets the location of focus, where the object orbits around
-
-	    this.target = new Vector3(); // How far you can dolly in and out ( PerspectiveCamera only )
-
-	    this.minDistance = 0;
-	    this.maxDistance = Infinity; // How far you can zoom in and out ( OrthographicCamera only )
-
-	    this.minZoom = 0;
-	    this.maxZoom = Infinity; // How far you can orbit vertically, upper and lower limits.
-	    // Range is 0 to Math.PI radians.
-
-	    this.minPolarAngle = 0; // radians
-
-	    this.maxPolarAngle = Math.PI; // radians
-	    // How far you can orbit horizontally, upper and lower limits.
-	    // If set, the interval [ min, max ] must be a sub-interval of [ - 2 PI, 2 PI ], with ( max - min < 2 PI )
-
-	    this.minAzimuthAngle = -Infinity; // radians
-
-	    this.maxAzimuthAngle = Infinity; // radians
-	    // Set to true to enable damping (inertia)
-	    // If damping is enabled, you must call controls.update() in your animation loop
-
-	    this.enableDamping = false;
-	    this.dampingFactor = 0.05; // This option actually enables dollying in and out; left as "zoom" for backwards compatibility.
-	    // Set to false to disable zooming
-
-	    this.enableZoom = true;
-	    this.zoomSpeed = 1.0; // Set to false to disable rotating
-
-	    this.enableRotate = true;
-	    this.rotateSpeed = 1.0; // Set to false to disable panning
-
-	    this.enablePan = true;
-	    this.panSpeed = 1.0;
-	    this.screenSpacePanning = true; // if false, pan orthogonal to world-space direction camera.up
-
-	    this.keyPanSpeed = 7.0; // pixels moved per arrow key push
-	    // Set to true to automatically rotate around the target
-	    // If auto-rotate is enabled, you must call controls.update() in your animation loop
-
-	    this.autoRotate = false;
-	    this.autoRotateSpeed = 2.0; // 30 seconds per orbit when fps is 60
-	    // The four arrow keys
-
-	    this.keys = {
-	      LEFT: 'ArrowLeft',
-	      UP: 'ArrowUp',
-	      RIGHT: 'ArrowRight',
-	      BOTTOM: 'ArrowDown'
-	    }; // Mouse buttons
-
-	    this.mouseButtons = {
-	      LEFT: MOUSE.ROTATE,
-	      MIDDLE: MOUSE.DOLLY,
-	      RIGHT: MOUSE.PAN
-	    }; // Touch fingers
-
-	    this.touches = {
-	      ONE: TOUCH.ROTATE,
-	      TWO: TOUCH.DOLLY_PAN
-	    }; // for reset
-
-	    this.target0 = this.target.clone();
-	    this.position0 = this.object.position.clone();
-	    this.zoom0 = this.object.zoom; // the target DOM element for key events
-
-	    this._domElementKeyEvents = null; //
-	    // public methods
-	    //
-
-	    this.getPolarAngle = function () {
-	      return spherical.phi;
-	    };
-
-	    this.getAzimuthalAngle = function () {
-	      return spherical.theta;
-	    };
-
-	    this.getDistance = function () {
-	      return this.object.position.distanceTo(this.target);
-	    };
-
-	    this.listenToKeyEvents = function (domElement) {
-	      domElement.addEventListener('keydown', onKeyDown);
-	      this._domElementKeyEvents = domElement;
-	    };
-
-	    this.saveState = function () {
-	      scope.target0.copy(scope.target);
-	      scope.position0.copy(scope.object.position);
-	      scope.zoom0 = scope.object.zoom;
-	    };
-
-	    this.reset = function () {
-	      scope.target.copy(scope.target0);
-	      scope.object.position.copy(scope.position0);
-	      scope.object.zoom = scope.zoom0;
-	      scope.object.updateProjectionMatrix();
-	      scope.dispatchEvent(_changeEvent);
-	      scope.update();
-	      state = STATE.NONE;
-	    }; // this method is exposed, but perhaps it would be better if we can make it private...
-
-
-	    this.update = function () {
-	      const offset = new Vector3(); // so camera.up is the orbit axis
-
-	      const quat = new Quaternion().setFromUnitVectors(object.up, new Vector3(0, 1, 0));
-	      const quatInverse = quat.clone().invert();
-	      const lastPosition = new Vector3();
-	      const lastQuaternion = new Quaternion();
-	      const twoPI = 2 * Math.PI;
-	      return function update() {
-	        const position = scope.object.position;
-	        offset.copy(position).sub(scope.target); // rotate offset to "y-axis-is-up" space
-
-	        offset.applyQuaternion(quat); // angle from z-axis around y-axis
-
-	        spherical.setFromVector3(offset);
-
-	        if (scope.autoRotate && state === STATE.NONE) {
-	          rotateLeft(getAutoRotationAngle());
-	        }
-
-	        if (scope.enableDamping) {
-	          spherical.theta += sphericalDelta.theta * scope.dampingFactor;
-	          spherical.phi += sphericalDelta.phi * scope.dampingFactor;
-	        } else {
-	          spherical.theta += sphericalDelta.theta;
-	          spherical.phi += sphericalDelta.phi;
-	        } // restrict theta to be between desired limits
-
-
-	        let min = scope.minAzimuthAngle;
-	        let max = scope.maxAzimuthAngle;
-
-	        if (isFinite(min) && isFinite(max)) {
-	          if (min < -Math.PI) min += twoPI;else if (min > Math.PI) min -= twoPI;
-	          if (max < -Math.PI) max += twoPI;else if (max > Math.PI) max -= twoPI;
-
-	          if (min <= max) {
-	            spherical.theta = Math.max(min, Math.min(max, spherical.theta));
-	          } else {
-	            spherical.theta = spherical.theta > (min + max) / 2 ? Math.max(min, spherical.theta) : Math.min(max, spherical.theta);
-	          }
-	        } // restrict phi to be between desired limits
-
-
-	        spherical.phi = Math.max(scope.minPolarAngle, Math.min(scope.maxPolarAngle, spherical.phi));
-	        spherical.makeSafe();
-	        spherical.radius *= scale; // restrict radius to be between desired limits
-
-	        spherical.radius = Math.max(scope.minDistance, Math.min(scope.maxDistance, spherical.radius)); // move target to panned location
-
-	        if (scope.enableDamping === true) {
-	          scope.target.addScaledVector(panOffset, scope.dampingFactor);
-	        } else {
-	          scope.target.add(panOffset);
-	        }
-
-	        offset.setFromSpherical(spherical); // rotate offset back to "camera-up-vector-is-up" space
-
-	        offset.applyQuaternion(quatInverse);
-	        position.copy(scope.target).add(offset);
-	        scope.object.lookAt(scope.target);
-
-	        if (scope.enableDamping === true) {
-	          sphericalDelta.theta *= 1 - scope.dampingFactor;
-	          sphericalDelta.phi *= 1 - scope.dampingFactor;
-	          panOffset.multiplyScalar(1 - scope.dampingFactor);
-	        } else {
-	          sphericalDelta.set(0, 0, 0);
-	          panOffset.set(0, 0, 0);
-	        }
-
-	        scale = 1; // update condition is:
-	        // min(camera displacement, camera rotation in radians)^2 > EPS
-	        // using small-angle approximation cos(x/2) = 1 - x^2 / 8
-
-	        if (zoomChanged || lastPosition.distanceToSquared(scope.object.position) > EPS || 8 * (1 - lastQuaternion.dot(scope.object.quaternion)) > EPS) {
-	          scope.dispatchEvent(_changeEvent);
-	          lastPosition.copy(scope.object.position);
-	          lastQuaternion.copy(scope.object.quaternion);
-	          zoomChanged = false;
-	          return true;
-	        }
-
-	        return false;
-	      };
-	    }();
-
-	    this.dispose = function () {
-	      scope.domElement.removeEventListener('contextmenu', onContextMenu);
-	      scope.domElement.removeEventListener('pointerdown', onPointerDown);
-	      scope.domElement.removeEventListener('pointercancel', onPointerCancel);
-	      scope.domElement.removeEventListener('wheel', onMouseWheel);
-	      scope.domElement.removeEventListener('pointermove', onPointerMove);
-	      scope.domElement.removeEventListener('pointerup', onPointerUp);
-
-	      if (scope._domElementKeyEvents !== null) {
-	        scope._domElementKeyEvents.removeEventListener('keydown', onKeyDown);
-	      } //scope.dispatchEvent( { type: 'dispose' } ); // should this be added here?
-
-	    }; //
-	    // internals
-	    //
-
-
-	    const scope = this;
-	    const STATE = {
-	      NONE: -1,
-	      ROTATE: 0,
-	      DOLLY: 1,
-	      PAN: 2,
-	      TOUCH_ROTATE: 3,
-	      TOUCH_PAN: 4,
-	      TOUCH_DOLLY_PAN: 5,
-	      TOUCH_DOLLY_ROTATE: 6
-	    };
-	    let state = STATE.NONE;
-	    const EPS = 0.000001; // current position in spherical coordinates
-
-	    const spherical = new Spherical();
-	    const sphericalDelta = new Spherical();
-	    let scale = 1;
-	    const panOffset = new Vector3();
-	    let zoomChanged = false;
-	    const rotateStart = new Vector2();
-	    const rotateEnd = new Vector2();
-	    const rotateDelta = new Vector2();
-	    const panStart = new Vector2();
-	    const panEnd = new Vector2();
-	    const panDelta = new Vector2();
-	    const dollyStart = new Vector2();
-	    const dollyEnd = new Vector2();
-	    const dollyDelta = new Vector2();
-	    const pointers = [];
-	    const pointerPositions = {};
-
-	    function getAutoRotationAngle() {
-	      return 2 * Math.PI / 60 / 60 * scope.autoRotateSpeed;
-	    }
-
-	    function getZoomScale() {
-	      return Math.pow(0.95, scope.zoomSpeed);
-	    }
-
-	    function rotateLeft(angle) {
-	      sphericalDelta.theta -= angle;
-	    }
-
-	    function rotateUp(angle) {
-	      sphericalDelta.phi -= angle;
-	    }
-
-	    const panLeft = function () {
-	      const v = new Vector3();
-	      return function panLeft(distance, objectMatrix) {
-	        v.setFromMatrixColumn(objectMatrix, 0); // get X column of objectMatrix
-
-	        v.multiplyScalar(-distance);
-	        panOffset.add(v);
-	      };
-	    }();
-
-	    const panUp = function () {
-	      const v = new Vector3();
-	      return function panUp(distance, objectMatrix) {
-	        if (scope.screenSpacePanning === true) {
-	          v.setFromMatrixColumn(objectMatrix, 1);
-	        } else {
-	          v.setFromMatrixColumn(objectMatrix, 0);
-	          v.crossVectors(scope.object.up, v);
-	        }
-
-	        v.multiplyScalar(distance);
-	        panOffset.add(v);
-	      };
-	    }(); // deltaX and deltaY are in pixels; right and down are positive
-
-
-	    const pan = function () {
-	      const offset = new Vector3();
-	      return function pan(deltaX, deltaY) {
-	        const element = scope.domElement;
-
-	        if (scope.object.isPerspectiveCamera) {
-	          // perspective
-	          const position = scope.object.position;
-	          offset.copy(position).sub(scope.target);
-	          let targetDistance = offset.length(); // half of the fov is center to top of screen
-
-	          targetDistance *= Math.tan(scope.object.fov / 2 * Math.PI / 180.0); // we use only clientHeight here so aspect ratio does not distort speed
-
-	          panLeft(2 * deltaX * targetDistance / element.clientHeight, scope.object.matrix);
-	          panUp(2 * deltaY * targetDistance / element.clientHeight, scope.object.matrix);
-	        } else if (scope.object.isOrthographicCamera) {
-	          // orthographic
-	          panLeft(deltaX * (scope.object.right - scope.object.left) / scope.object.zoom / element.clientWidth, scope.object.matrix);
-	          panUp(deltaY * (scope.object.top - scope.object.bottom) / scope.object.zoom / element.clientHeight, scope.object.matrix);
-	        } else {
-	          // camera neither orthographic nor perspective
-	          console.warn('WARNING: OrbitControls.js encountered an unknown camera type - pan disabled.');
-	          scope.enablePan = false;
-	        }
-	      };
-	    }();
-
-	    function dollyOut(dollyScale) {
-	      if (scope.object.isPerspectiveCamera) {
-	        scale /= dollyScale;
-	      } else if (scope.object.isOrthographicCamera) {
-	        scope.object.zoom = Math.max(scope.minZoom, Math.min(scope.maxZoom, scope.object.zoom * dollyScale));
-	        scope.object.updateProjectionMatrix();
-	        zoomChanged = true;
-	      } else {
-	        console.warn('WARNING: OrbitControls.js encountered an unknown camera type - dolly/zoom disabled.');
-	        scope.enableZoom = false;
-	      }
-	    }
-
-	    function dollyIn(dollyScale) {
-	      if (scope.object.isPerspectiveCamera) {
-	        scale *= dollyScale;
-	      } else if (scope.object.isOrthographicCamera) {
-	        scope.object.zoom = Math.max(scope.minZoom, Math.min(scope.maxZoom, scope.object.zoom / dollyScale));
-	        scope.object.updateProjectionMatrix();
-	        zoomChanged = true;
-	      } else {
-	        console.warn('WARNING: OrbitControls.js encountered an unknown camera type - dolly/zoom disabled.');
-	        scope.enableZoom = false;
-	      }
-	    } //
-	    // event callbacks - update the object state
-	    //
-
-
-	    function handleMouseDownRotate(event) {
-	      rotateStart.set(event.clientX, event.clientY);
-	    }
-
-	    function handleMouseDownDolly(event) {
-	      dollyStart.set(event.clientX, event.clientY);
-	    }
-
-	    function handleMouseDownPan(event) {
-	      panStart.set(event.clientX, event.clientY);
-	    }
-
-	    function handleMouseMoveRotate(event) {
-	      rotateEnd.set(event.clientX, event.clientY);
-	      rotateDelta.subVectors(rotateEnd, rotateStart).multiplyScalar(scope.rotateSpeed);
-	      const element = scope.domElement;
-	      rotateLeft(2 * Math.PI * rotateDelta.x / element.clientHeight); // yes, height
-
-	      rotateUp(2 * Math.PI * rotateDelta.y / element.clientHeight);
-	      rotateStart.copy(rotateEnd);
-	      scope.update();
-	    }
-
-	    function handleMouseMoveDolly(event) {
-	      dollyEnd.set(event.clientX, event.clientY);
-	      dollyDelta.subVectors(dollyEnd, dollyStart);
-
-	      if (dollyDelta.y > 0) {
-	        dollyOut(getZoomScale());
-	      } else if (dollyDelta.y < 0) {
-	        dollyIn(getZoomScale());
-	      }
-
-	      dollyStart.copy(dollyEnd);
-	      scope.update();
-	    }
-
-	    function handleMouseMovePan(event) {
-	      panEnd.set(event.clientX, event.clientY);
-	      panDelta.subVectors(panEnd, panStart).multiplyScalar(scope.panSpeed);
-	      pan(panDelta.x, panDelta.y);
-	      panStart.copy(panEnd);
-	      scope.update();
-	    }
-
-	    function handleMouseWheel(event) {
-	      if (event.deltaY < 0) {
-	        dollyIn(getZoomScale());
-	      } else if (event.deltaY > 0) {
-	        dollyOut(getZoomScale());
-	      }
-
-	      scope.update();
-	    }
-
-	    function handleKeyDown(event) {
-	      let needsUpdate = false;
-
-	      switch (event.code) {
-	        case scope.keys.UP:
-	          pan(0, scope.keyPanSpeed);
-	          needsUpdate = true;
-	          break;
-
-	        case scope.keys.BOTTOM:
-	          pan(0, -scope.keyPanSpeed);
-	          needsUpdate = true;
-	          break;
-
-	        case scope.keys.LEFT:
-	          pan(scope.keyPanSpeed, 0);
-	          needsUpdate = true;
-	          break;
-
-	        case scope.keys.RIGHT:
-	          pan(-scope.keyPanSpeed, 0);
-	          needsUpdate = true;
-	          break;
-	      }
-
-	      if (needsUpdate) {
-	        // prevent the browser from scrolling on cursor keys
-	        event.preventDefault();
-	        scope.update();
-	      }
-	    }
-
-	    function handleTouchStartRotate() {
-	      if (pointers.length === 1) {
-	        rotateStart.set(pointers[0].pageX, pointers[0].pageY);
-	      } else {
-	        const x = 0.5 * (pointers[0].pageX + pointers[1].pageX);
-	        const y = 0.5 * (pointers[0].pageY + pointers[1].pageY);
-	        rotateStart.set(x, y);
-	      }
-	    }
-
-	    function handleTouchStartPan() {
-	      if (pointers.length === 1) {
-	        panStart.set(pointers[0].pageX, pointers[0].pageY);
-	      } else {
-	        const x = 0.5 * (pointers[0].pageX + pointers[1].pageX);
-	        const y = 0.5 * (pointers[0].pageY + pointers[1].pageY);
-	        panStart.set(x, y);
-	      }
-	    }
-
-	    function handleTouchStartDolly() {
-	      const dx = pointers[0].pageX - pointers[1].pageX;
-	      const dy = pointers[0].pageY - pointers[1].pageY;
-	      const distance = Math.sqrt(dx * dx + dy * dy);
-	      dollyStart.set(0, distance);
-	    }
-
-	    function handleTouchStartDollyPan() {
-	      if (scope.enableZoom) handleTouchStartDolly();
-	      if (scope.enablePan) handleTouchStartPan();
-	    }
-
-	    function handleTouchStartDollyRotate() {
-	      if (scope.enableZoom) handleTouchStartDolly();
-	      if (scope.enableRotate) handleTouchStartRotate();
-	    }
-
-	    function handleTouchMoveRotate(event) {
-	      if (pointers.length == 1) {
-	        rotateEnd.set(event.pageX, event.pageY);
-	      } else {
-	        const position = getSecondPointerPosition(event);
-	        const x = 0.5 * (event.pageX + position.x);
-	        const y = 0.5 * (event.pageY + position.y);
-	        rotateEnd.set(x, y);
-	      }
-
-	      rotateDelta.subVectors(rotateEnd, rotateStart).multiplyScalar(scope.rotateSpeed);
-	      const element = scope.domElement;
-	      rotateLeft(2 * Math.PI * rotateDelta.x / element.clientHeight); // yes, height
-
-	      rotateUp(2 * Math.PI * rotateDelta.y / element.clientHeight);
-	      rotateStart.copy(rotateEnd);
-	    }
-
-	    function handleTouchMovePan(event) {
-	      if (pointers.length === 1) {
-	        panEnd.set(event.pageX, event.pageY);
-	      } else {
-	        const position = getSecondPointerPosition(event);
-	        const x = 0.5 * (event.pageX + position.x);
-	        const y = 0.5 * (event.pageY + position.y);
-	        panEnd.set(x, y);
-	      }
-
-	      panDelta.subVectors(panEnd, panStart).multiplyScalar(scope.panSpeed);
-	      pan(panDelta.x, panDelta.y);
-	      panStart.copy(panEnd);
-	    }
-
-	    function handleTouchMoveDolly(event) {
-	      const position = getSecondPointerPosition(event);
-	      const dx = event.pageX - position.x;
-	      const dy = event.pageY - position.y;
-	      const distance = Math.sqrt(dx * dx + dy * dy);
-	      dollyEnd.set(0, distance);
-	      dollyDelta.set(0, Math.pow(dollyEnd.y / dollyStart.y, scope.zoomSpeed));
-	      dollyOut(dollyDelta.y);
-	      dollyStart.copy(dollyEnd);
-	    }
-
-	    function handleTouchMoveDollyPan(event) {
-	      if (scope.enableZoom) handleTouchMoveDolly(event);
-	      if (scope.enablePan) handleTouchMovePan(event);
-	    }
-
-	    function handleTouchMoveDollyRotate(event) {
-	      if (scope.enableZoom) handleTouchMoveDolly(event);
-	      if (scope.enableRotate) handleTouchMoveRotate(event);
-	    } //
-	    // event handlers - FSM: listen for events and reset state
-	    //
-
-
-	    function onPointerDown(event) {
-	      if (scope.enabled === false) return;
-
-	      if (pointers.length === 0) {
-	        scope.domElement.setPointerCapture(event.pointerId);
-	        scope.domElement.addEventListener('pointermove', onPointerMove);
-	        scope.domElement.addEventListener('pointerup', onPointerUp);
-	      } //
-
-
-	      addPointer(event);
-
-	      if (event.pointerType === 'touch') {
-	        onTouchStart(event);
-	      } else {
-	        onMouseDown(event);
-	      }
-	    }
-
-	    function onPointerMove(event) {
-	      if (scope.enabled === false) return;
-
-	      if (event.pointerType === 'touch') {
-	        onTouchMove(event);
-	      } else {
-	        onMouseMove(event);
-	      }
-	    }
-
-	    function onPointerUp(event) {
-	      removePointer(event);
-
-	      if (pointers.length === 0) {
-	        scope.domElement.releasePointerCapture(event.pointerId);
-	        scope.domElement.removeEventListener('pointermove', onPointerMove);
-	        scope.domElement.removeEventListener('pointerup', onPointerUp);
-	      }
-
-	      scope.dispatchEvent(_endEvent);
-	      state = STATE.NONE;
-	    }
-
-	    function onPointerCancel(event) {
-	      removePointer(event);
-	    }
-
-	    function onMouseDown(event) {
-	      let mouseAction;
-
-	      switch (event.button) {
-	        case 0:
-	          mouseAction = scope.mouseButtons.LEFT;
-	          break;
-
-	        case 1:
-	          mouseAction = scope.mouseButtons.MIDDLE;
-	          break;
-
-	        case 2:
-	          mouseAction = scope.mouseButtons.RIGHT;
-	          break;
-
-	        default:
-	          mouseAction = -1;
-	      }
-
-	      switch (mouseAction) {
-	        case MOUSE.DOLLY:
-	          if (scope.enableZoom === false) return;
-	          handleMouseDownDolly(event);
-	          state = STATE.DOLLY;
-	          break;
-
-	        case MOUSE.ROTATE:
-	          if (event.ctrlKey || event.metaKey || event.shiftKey) {
-	            if (scope.enablePan === false) return;
-	            handleMouseDownPan(event);
-	            state = STATE.PAN;
-	          } else {
-	            if (scope.enableRotate === false) return;
-	            handleMouseDownRotate(event);
-	            state = STATE.ROTATE;
-	          }
-
-	          break;
-
-	        case MOUSE.PAN:
-	          if (event.ctrlKey || event.metaKey || event.shiftKey) {
-	            if (scope.enableRotate === false) return;
-	            handleMouseDownRotate(event);
-	            state = STATE.ROTATE;
-	          } else {
-	            if (scope.enablePan === false) return;
-	            handleMouseDownPan(event);
-	            state = STATE.PAN;
-	          }
-
-	          break;
-
-	        default:
-	          state = STATE.NONE;
-	      }
-
-	      if (state !== STATE.NONE) {
-	        scope.dispatchEvent(_startEvent);
-	      }
-	    }
-
-	    function onMouseMove(event) {
-	      if (scope.enabled === false) return;
-
-	      switch (state) {
-	        case STATE.ROTATE:
-	          if (scope.enableRotate === false) return;
-	          handleMouseMoveRotate(event);
-	          break;
-
-	        case STATE.DOLLY:
-	          if (scope.enableZoom === false) return;
-	          handleMouseMoveDolly(event);
-	          break;
-
-	        case STATE.PAN:
-	          if (scope.enablePan === false) return;
-	          handleMouseMovePan(event);
-	          break;
-	      }
-	    }
-
-	    function onMouseWheel(event) {
-	      if (scope.enabled === false || scope.enableZoom === false || state !== STATE.NONE) return;
-	      event.preventDefault();
-	      scope.dispatchEvent(_startEvent);
-	      handleMouseWheel(event);
-	      scope.dispatchEvent(_endEvent);
-	    }
-
-	    function onKeyDown(event) {
-	      if (scope.enabled === false || scope.enablePan === false) return;
-	      handleKeyDown(event);
-	    }
-
-	    function onTouchStart(event) {
-	      trackPointer(event);
-
-	      switch (pointers.length) {
-	        case 1:
-	          switch (scope.touches.ONE) {
-	            case TOUCH.ROTATE:
-	              if (scope.enableRotate === false) return;
-	              handleTouchStartRotate();
-	              state = STATE.TOUCH_ROTATE;
-	              break;
-
-	            case TOUCH.PAN:
-	              if (scope.enablePan === false) return;
-	              handleTouchStartPan();
-	              state = STATE.TOUCH_PAN;
-	              break;
-
-	            default:
-	              state = STATE.NONE;
-	          }
-
-	          break;
-
-	        case 2:
-	          switch (scope.touches.TWO) {
-	            case TOUCH.DOLLY_PAN:
-	              if (scope.enableZoom === false && scope.enablePan === false) return;
-	              handleTouchStartDollyPan();
-	              state = STATE.TOUCH_DOLLY_PAN;
-	              break;
-
-	            case TOUCH.DOLLY_ROTATE:
-	              if (scope.enableZoom === false && scope.enableRotate === false) return;
-	              handleTouchStartDollyRotate();
-	              state = STATE.TOUCH_DOLLY_ROTATE;
-	              break;
-
-	            default:
-	              state = STATE.NONE;
-	          }
-
-	          break;
-
-	        default:
-	          state = STATE.NONE;
-	      }
-
-	      if (state !== STATE.NONE) {
-	        scope.dispatchEvent(_startEvent);
-	      }
-	    }
-
-	    function onTouchMove(event) {
-	      trackPointer(event);
-
-	      switch (state) {
-	        case STATE.TOUCH_ROTATE:
-	          if (scope.enableRotate === false) return;
-	          handleTouchMoveRotate(event);
-	          scope.update();
-	          break;
-
-	        case STATE.TOUCH_PAN:
-	          if (scope.enablePan === false) return;
-	          handleTouchMovePan(event);
-	          scope.update();
-	          break;
-
-	        case STATE.TOUCH_DOLLY_PAN:
-	          if (scope.enableZoom === false && scope.enablePan === false) return;
-	          handleTouchMoveDollyPan(event);
-	          scope.update();
-	          break;
-
-	        case STATE.TOUCH_DOLLY_ROTATE:
-	          if (scope.enableZoom === false && scope.enableRotate === false) return;
-	          handleTouchMoveDollyRotate(event);
-	          scope.update();
-	          break;
-
-	        default:
-	          state = STATE.NONE;
-	      }
-	    }
-
-	    function onContextMenu(event) {
-	      if (scope.enabled === false) return;
-	      event.preventDefault();
-	    }
-
-	    function addPointer(event) {
-	      pointers.push(event);
-	    }
-
-	    function removePointer(event) {
-	      delete pointerPositions[event.pointerId];
-
-	      for (let i = 0; i < pointers.length; i++) {
-	        if (pointers[i].pointerId == event.pointerId) {
-	          pointers.splice(i, 1);
-	          return;
-	        }
-	      }
-	    }
-
-	    function trackPointer(event) {
-	      let position = pointerPositions[event.pointerId];
-
-	      if (position === undefined) {
-	        position = new Vector2();
-	        pointerPositions[event.pointerId] = position;
-	      }
-
-	      position.set(event.pageX, event.pageY);
-	    }
-
-	    function getSecondPointerPosition(event) {
-	      const pointer = event.pointerId === pointers[0].pointerId ? pointers[1] : pointers[0];
-	      return pointerPositions[pointer.pointerId];
-	    } //
-
-
-	    scope.domElement.addEventListener('contextmenu', onContextMenu);
-	    scope.domElement.addEventListener('pointerdown', onPointerDown);
-	    scope.domElement.addEventListener('pointercancel', onPointerCancel);
-	    scope.domElement.addEventListener('wheel', onMouseWheel, {
-	      passive: false
-	    }); // force an update at start
-
-	    this.update();
-	  }
-
-	} // This set of controls performs orbiting, dollying (zooming), and panning.
-
 	const scene = new Scene();
 	scene.background = new Color('white');
 	const renderer = new WebGLRenderer();
@@ -10432,13 +9906,13 @@
 
 	const camera = new PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 	camera.position.set(0, 10, 20);
-	camera.lookAt(0, 0, 0);
-	const controls = new OrbitControls(camera, renderer.domElement);
-	controls.update();
+	camera.lookAt(0, 0, 0); // useOrbitControls(camera, renderer);
+
+	useFirstPersonControls(camera, renderer);
 
 	function animate(time) {
 	  requestAnimationFrame(animate);
-	  controls.update(); // console.log(line.geometry.attributes.position.array);
+	  updateControls(); // console.log(line.geometry.attributes.position.array);
 	  // animateLines();
 
 	  animateCube(); // animateCube();
