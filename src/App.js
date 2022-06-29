@@ -15,9 +15,10 @@ import {
 } from './lights';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { animateSpheres, renderSpheres } from './spheres';
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xAAAAAA);
+scene.background = new THREE.Color('white');
 
 const renderer = new THREE.WebGLRenderer();
 renderer.physicallyCorrectLights = true;
@@ -29,13 +30,14 @@ document.body.appendChild(renderer.domElement);
 // renderCube(scene);
 renderPlane(scene);
 // renderModel(scene);
-renderTextureCube(scene);
+// renderTextureCube(scene);
+renderSpheres(scene)
 
 // renderAmbientLight(scene);
 renderHemisphereLight(scene);
-// renderDirectionalLight(scene);
+renderDirectionalLight(scene);
 // renderPointLight(scene);
-renderSpotLight(scene);
+// renderSpotLight(scene);
 // renderRectAreaLight(scene);
 
 // CAMERA
@@ -52,14 +54,16 @@ camera.lookAt(0, 0, 0);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.update();
 
-function animate() {
+function animate(time) {
   requestAnimationFrame(animate);
   controls.update()
 
   // console.log(line.geometry.attributes.position.array);
 
   // animateLines();
-  animateCube();
+  // animateCube();
+  // animateCube();
+  animateSpheres(time);
 
   renderer.render(scene, camera);
 }

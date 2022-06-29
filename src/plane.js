@@ -16,6 +16,8 @@ export function renderPlane(scene) {
     map: texture,
     side: THREE.DoubleSide,
   });
+  planeMat.color.setRGB(1.5, 1.5, 1.5);
+
   const mesh = new THREE.Mesh(planeGeo, planeMat);
   mesh.rotation.x = Math.PI * -.5;
   scene.add(mesh);
