@@ -18,6 +18,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 const scene = new THREE.Scene();
 const renderer = new THREE.WebGLRenderer();
+renderer.physicallyCorrectLights = true;
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
@@ -28,11 +29,11 @@ renderPlane(scene);
 renderModel(scene);
 
 // renderAmbientLight(scene);
-// renderHemisphereLight(scene);
+renderHemisphereLight(scene);
 // renderDirectionalLight(scene);
 // renderPointLight(scene);
-// renderSpotLight(scene);
-renderRectAreaLight(scene);
+renderSpotLight(scene);
+// renderRectAreaLight(scene);
 
 // CAMERA
 const camera = new THREE.PerspectiveCamera(

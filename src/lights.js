@@ -38,10 +38,10 @@ export function renderPointLight(scene) {
 export function renderSpotLight(scene) {
   const color = 0xFFFFFF;
   const intensity = 1;
-  const distance = 0.0;
+  const distance = Infinity;
   const angle = 45;
   const penumbra = 0;
-  const decay = 1;
+  const decay = 2;
   const light = new THREE.SpotLight(
     color,
     intensity,
@@ -50,8 +50,9 @@ export function renderSpotLight(scene) {
     penumbra,
     decay,
   );
+  light.power = 300;
 
-  light.position.set(1, 5, 0);
+  light.position.set(3, 5, 2);
   light.target.position.set(5, 0, 0);
   light.castShadow = false;
 
@@ -65,11 +66,11 @@ export function renderSpotLight(scene) {
   scene.add(light);
   scene.add(light.target);
 
-  // const helper = new THREE.SpotLightHelper(light);
-  // scene.add(helper);
-
   light.target.updateMatrixWorld();
-  // helper.update();
+
+  const helper = new THREE.SpotLightHelper(light);
+  scene.add(helper);
+  helper.update();
 }
 
 export function renderRectAreaLight(scene) {
@@ -108,7 +109,7 @@ export function renderRectAreaLight(scene) {
   const helper1 = new RectAreaLightHelper(light1);
   const helper2 = new RectAreaLightHelper(light2);
   const helper3 = new RectAreaLightHelper(light3);
-  
+
   scene.add(helper1);
   scene.add(helper2);
   scene.add(helper3);
