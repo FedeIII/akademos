@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import React from 'react';
 
-import { renderCube, animateCube } from './cube';
+import { renderCube, renderTextureCube, animateCube } from './cube';
 import { renderLines, animateLines } from './lines';
 import { renderModel } from './model';
 import { renderPlane } from './plane';
@@ -17,6 +17,8 @@ import {
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xAAAAAA);
+
 const renderer = new THREE.WebGLRenderer();
 renderer.physicallyCorrectLights = true;
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -26,7 +28,8 @@ document.body.appendChild(renderer.domElement);
 // renderLines(scene);
 // renderCube(scene);
 renderPlane(scene);
-renderModel(scene);
+// renderModel(scene);
+renderTextureCube(scene);
 
 // renderAmbientLight(scene);
 renderHemisphereLight(scene);
@@ -56,7 +59,7 @@ function animate() {
   // console.log(line.geometry.attributes.position.array);
 
   // animateLines();
-  // animateCube();
+  animateCube();
 
   renderer.render(scene, camera);
 }
