@@ -11,6 +11,7 @@ import {
   renderDirectionalLight,
   renderPointLight,
   renderSpotLight,
+  renderRectAreaLight,
 } from './lights';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
@@ -27,10 +28,11 @@ renderPlane(scene);
 renderModel(scene);
 
 // renderAmbientLight(scene);
-renderHemisphereLight(scene);
+// renderHemisphereLight(scene);
 // renderDirectionalLight(scene);
 // renderPointLight(scene);
-renderSpotLight(scene);
+// renderSpotLight(scene);
+renderRectAreaLight(scene);
 
 // CAMERA
 const camera = new THREE.PerspectiveCamera(

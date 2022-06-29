@@ -12,7 +12,7 @@ export function renderPlane(scene) {
   texture.repeat.set(repeats, repeats);
 
   const planeGeo = new THREE.PlaneBufferGeometry(planeSize, planeSize);
-  const planeMat = new THREE.MeshPhongMaterial({
+  const planeMat = new THREE.MeshStandardMaterial({
     map: texture,
     side: THREE.DoubleSide,
   });

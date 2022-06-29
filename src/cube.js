@@ -10,7 +10,7 @@ export function renderCube(scene) {
 
   const cubeSize = 4;
   const cubeGeo = new THREE.BoxBufferGeometry(cubeSize, cubeSize, cubeSize);
-  const cubeMat = new THREE.MeshPhongMaterial({color: '#8AC'});
+  const cubeMat = new THREE.MeshStandardMaterial({color: '#8AC'});
   const mesh = new THREE.Mesh(cubeGeo, cubeMat);
   mesh.position.set(cubeSize + 1, cubeSize / 2, 0);
   scene.add(mesh);
