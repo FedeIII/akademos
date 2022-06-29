@@ -12975,7 +12975,6 @@
 	function renderModel(scene) {
 	  const loader = new GLTFLoader();
 	  loader.load('./models/DamagedHelmet/DamagedHelmet.glft', function (gltf) {
-	    console.log(gltf.scene);
 	    gltf.scene.position.y = 1;
 	    scene.add(gltf.scene);
 	  }, undefined, function (error) {
@@ -13007,9 +13006,31 @@
 
 	  const groundColor = 0xB97A20; // brownish orange
 
-	  const intensity = 1;
+	  const intensity = 0.6;
 	  const light = new HemisphereLight(skyColor, groundColor, intensity);
 	  scene.add(light);
+	}
+	function renderSpotLight(scene) {
+	  const color = 0xFFFFFF;
+	  const intensity = 1;
+	  const distance = 0.0;
+	  const angle = 45;
+	  const penumbra = 0;
+	  const decay = 1;
+	  const light = new SpotLight(color, intensity, distance, angle, penumbra, decay);
+	  light.position.set(1, 5, 0);
+	  light.target.position.set(5, 0, 0);
+	  light.castShadow = false; // light.shadow.mapSize.width = 1024;
+	  // light.shadow.mapSize.height = 1024;
+	  // light.shadow.camera.near = 500;
+	  // light.shadow.camera.far = 4000;
+	  // light.shadow.camera.fov = 30;
+
+	  scene.add(light);
+	  scene.add(light.target); // const helper = new THREE.SpotLightHelper(light);
+	  // scene.add(helper);
+
+	  light.target.updateMatrixWorld(); // helper.update();
 	}
 
 	// Unlike TrackballControls, it maintains the "up" direction object.up (+Y by default).
@@ -13843,7 +13864,10 @@
 	renderPlane(scene);
 	renderModel(scene); // renderAmbientLight(scene);
 
-	renderHemisphereLight(scene); // CAMERA
+	renderHemisphereLight(scene); // renderDirectionalLight(scene);
+	// renderPointLight(scene);
+
+	renderSpotLight(scene); // CAMERA
 
 	const camera = new PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 	camera.position.set(0, 10, 20);

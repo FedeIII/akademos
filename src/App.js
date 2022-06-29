@@ -5,7 +5,13 @@ import { renderCube, animateCube } from './cube';
 import { renderLines, animateLines } from './lines';
 import { renderModel } from './model';
 import { renderPlane } from './plane';
-import { renderAmbientLight, renderHemisphereLight } from './lights';
+import {
+  renderAmbientLight,
+  renderHemisphereLight,
+  renderDirectionalLight,
+  renderPointLight,
+  renderSpotLight,
+} from './lights';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
@@ -22,6 +28,9 @@ renderModel(scene);
 
 // renderAmbientLight(scene);
 renderHemisphereLight(scene);
+// renderDirectionalLight(scene);
+// renderPointLight(scene);
+renderSpotLight(scene);
 
 // CAMERA
 const camera = new THREE.PerspectiveCamera(
