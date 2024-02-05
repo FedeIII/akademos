@@ -1,29 +1,28 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Dropper</title>
+    <style>
+      body {
+        margin: 0;
+      }
 
-<head>
-  <meta charset="utf-8">
-  <title>My first three.js app</title>
-  <style>
-    body {
-      margin: 0;
-    }
-
-    #info {
-      position: absolute;
-      top: 45%;
-      width: 100%;
-      text-align: center;
-      z-index: 100;
-      display: block;
-      color: red;
-    }
-  </style>
-</head>
-
-<body>
-  <div id="root"></div>
-  <script src="../dist/bundle.js"></script>
-</body>
-
+      .canvas {
+        border: 1px solid black;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="app">
+      <menu id="menu">
+        <li><button id="gravity">Gravity</button></li>
+        <li><button id="gas">Gas</button></li>
+      </menu>
+      <canvas id="canvas" class="canvas"></canvas>
+    </div>
+    <script src="dist/index.js"></script>
+  </body>
 </html>
