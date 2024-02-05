@@ -33,18 +33,18 @@ document.body.appendChild(renderer.domElement);
 
 
 // renderLines(scene);
-renderCube(scene);
+// renderCube(scene);
 renderPlane(scene);
-// renderModel(scene);
+renderModel(scene);
 // renderTextureCube(scene);
 // renderSpheres(scene)
 
 // renderAmbientLight(scene);
 renderHemisphereLight(scene);
-renderDirectionalLight(scene);
+// renderDirectionalLight(scene);
 // renderPointLight(scene);
-// renderSpotLight(scene);
-// renderRectAreaLight(scene);
+renderSpotLight(scene);
+renderRectAreaLight(scene);
 
 // CAMERA
 const camera = new THREE.PerspectiveCamera(
@@ -56,8 +56,8 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.set(0, 10, 20);
 camera.lookAt(0, 0, 0);
 
-// useOrbitControls(camera, renderer);
-useFirstPersonControls(camera, renderer);
+useOrbitControls(camera, renderer);
+// useFirstPersonControls(camera, renderer);
 
 function animate(time) {
   requestAnimationFrame(animate);
@@ -66,7 +66,7 @@ function animate(time) {
   // console.log(line.geometry.attributes.position.array);
 
   // animateLines();
-  animateCube();
+  // animateCube();
   // animateCube();
   // animateSpheres(time);
 
